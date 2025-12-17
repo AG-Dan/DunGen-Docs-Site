@@ -3,3 +3,5 @@ venv/
 
 # Other Built Sites
 site/
+site-online/
+site-offline/
