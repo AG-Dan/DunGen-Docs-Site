@@ -597,9 +597,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#override-automatic-tile-bounds" class="md-nav__link">
+  <a href="#manual-tile-bounds" class="md-nav__link">
     <span class="md-ellipsis">
-      Override Automatic Tile Bounds
+      Manual Tile Bounds
     </span>
   </a>
   
@@ -627,6 +627,72 @@
   <a href="#tags" class="md-nav__link">
     <span class="md-ellipsis">
       Tags
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tile-bounds" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tile Bounds
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tile Bounds">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#automatic-tile-bounds" class="md-nav__link">
+    <span class="md-ellipsis">
+      Automatic Tile Bounds
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#manual-tile-bounds_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Manual Tile Bounds
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuring-bounds-calculations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuring Bounds Calculations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#per-tile-bounds-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Per-Tile Bounds Configuration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Per-Tile Bounds Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#custom-bounds-calculator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Custom Bounds Calculator
     </span>
   </a>
   
@@ -1223,7 +1289,7 @@
   
   
   <span class="md-ellipsis">
-    Built-in Culling
+    Culling
     
   </span>
   
@@ -1790,9 +1856,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#override-automatic-tile-bounds" class="md-nav__link">
+  <a href="#manual-tile-bounds" class="md-nav__link">
     <span class="md-ellipsis">
-      Override Automatic Tile Bounds
+      Manual Tile Bounds
     </span>
   </a>
   
@@ -1820,6 +1886,72 @@
   <a href="#tags" class="md-nav__link">
     <span class="md-ellipsis">
       Tags
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tile-bounds" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tile Bounds
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tile Bounds">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#automatic-tile-bounds" class="md-nav__link">
+    <span class="md-ellipsis">
+      Automatic Tile Bounds
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#manual-tile-bounds_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Manual Tile Bounds
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuring-bounds-calculations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuring Bounds Calculations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#per-tile-bounds-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Per-Tile Bounds Configuration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Per-Tile Bounds Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#custom-bounds-calculator" class="md-nav__link">
+    <span class="md-ellipsis">
+      Custom Bounds Calculator
     </span>
   </a>
   
@@ -1893,9 +2025,9 @@
 <p>The <a href="../dungeon-generator/">Dungeon Generator</a> component has a global <code>Repeat Mode</code> override setting that applies to all tiles.</p>
 </div>
 <hr />
-<h4 id="override-automatic-tile-bounds">Override Automatic Tile Bounds</h4>
+<h4 id="manual-tile-bounds">Manual Tile Bounds</h4>
 <ul>
-<li><strong>Functionality:</strong> By default, DunGen calculates the physical boundaries (an Axis-Aligned Bounding Box - AABB) of a Tile based on the Renderers and Colliders within its hierarchy. Checking this box allows you to manually define the bounds used for collision detection during generation.</li>
+<li><strong>Functionality:</strong> By default, DunGen calculates the physical boundaries (an Axis-Aligned Bounding Box - AABB) of a Tile based on the objects within its hierarchy. Checking this box allows you to manually define the bounds used for collision detection during generation. See the <a href="#tile-bounds">Tile Bounds</a> section for more information.</li>
 <li><strong>When to Use:</strong> Useful if the automatic bounds calculation isn't accurate for your Tile's effective space, perhaps due to complex shapes or invisible helper objects affecting the bounds.</li>
 </ul>
 <div class="admonition note">
@@ -1933,6 +2065,86 @@
 <li><strong>Functionality:</strong> Allows you to assign one or more custom tags to this Tile.</li>
 <li><strong>Purpose:</strong> These tags are used by the <a href="../../advanced-features/connection-rules/">Tile Connection Rules</a> system (configured in the Dungeon Flow asset) to allow or deny connections between specific types of tiles (e.g., preventing two "Corridor" tagged tiles from connecting directly). Tags are extremely versatile and can be used for any number of purposes in your own code.</li>
 </ul>
+<hr />
+<h2 id="tile-bounds">Tile Bounds</h2>
+<p>The bounds of a <code>Tile</code> are computed as an axis-aligned bounding box (AABB) around a tile's contents. These bounds are used during generation to detect collisions and prevent tiles from overlapping. Bounds can be recalculated using the <code>Recalculate Bounds</code> button at the bottom of the tile component's inspector.</p>
+<div class="admonition tip">
+<p class="admonition-title">Common Issues</p>
+<p>If tiles overlap unexpectedly or fail to generate, incorrect tile bounds are often the cause. Try recalculating the tile's bounds, or <a href="#manual-tile-bounds">set them manually</a>.</p>
+</div>
+<hr />
+<h3 id="automatic-tile-bounds">Automatic Tile Bounds</h3>
+<p>By default, a tile's bounds are automatically recalculated every time the prefab changes. You can disable this behaviour by unchecking <strong><code>Recalculate On Save</code></strong> in the DunGen project settings. This is useful for complex tiles where bounds recalculation causes noticeable editor slowdowns.</p>
+<p>Missing bounds can also be recalculated across your entire project using the <code>Calculate Missing Tile Bounds</code> button in the DunGen project settings.</p>
+<hr />
+<h3 id="manual-tile-bounds_1">Manual Tile Bounds</h3>
+<p>If the automatic tile bounds aren't working for one of your tiles, you can manually set the bounding box by checking the <code>Manual Tile Bounds</code> checkbox in the tile inspector.</p>
+<p><a class="glightbox" href="../../assets/images/core-concepts/manual-tile-bounds.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Manual Tile Bounds" src="../../assets/images/core-concepts/manual-tile-bounds.png" /></a></p>
+<p>This enables three ways to define the bounds:</p>
+<ol>
+<li>Manually entering <strong>Center</strong> and <strong>Extent</strong> values</li>
+<li>Adjusting the red bounding box gizmo in the Scene view</li>
+<li>Clicking <strong><code>Fit to Tile</code></strong> to run the automatic calculation and apply the result</li>
+</ol>
+<hr />
+<h3 id="configuring-bounds-calculations">Configuring Bounds Calculations</h3>
+<p>Automatic tile bounds calculations can be configured globally in DunGen's project settings.</p>
+<p><a class="glightbox" href="../../assets/images/core-concepts/tile-bounds-global-settings.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Global Tile Bounds Settings" src="../../assets/images/core-concepts/tile-bounds-global-settings.png" /></a></p>
+<p>The default bounds calculator includes several settings that control which objects contribute to a tile's bounds (marked as box B in the above image).</p>
+<hr />
+<h3 id="per-tile-bounds-configuration">Per-Tile Bounds Configuration</h3>
+<p>In some cases, individual tiles may require different bounds behaviour than the global settings provide.</p>
+<p>It's possible to configure how bounds are calculated on a per-tile basis by attaching an override component to your tile prefab <code>Add Component &gt; DunGen &gt; Tile Bounds Override</code>, or by adding a component to the tile prefab that implements the <code>ITileBoundsCalculator</code> interface.</p>
+<hr />
+<h4 id="custom-bounds-calculator">Custom Bounds Calculator</h4>
+<p>Custom logic for calculating tile bounds can be provided by simply creating a new C# class that implements the <code>ITileBoundsCalculator</code> interface and implements <code>CalculateLocalBounds()</code>.</p>
+<p>This class will automatically appear in the bounds calculator drop-down in DunGen's project settings (box A in the image above). Selecting it will apply your custom logic globally to all tiles, unless a tile explicitly overrides it with a per-tile configuration.</p>
+<details class="example">
+<summary>Custom Bounds Calculator</summary>
+<div class="language-C# highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">using</span><span class="w"> </span><span class="nn">DunGen.TileBounds</span><span class="p">;</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="k">using</span><span class="w"> </span><span class="nn">UnityEngine</span><span class="p">;</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MyCustomBoundsCalculator</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ITileBoundsCalculator</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="p">{</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="c1">// Any serializable fields defined here will be exposed in the project settings</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">Bounds</span><span class="w"> </span><span class="nf">CalculateLocalBounds</span><span class="p">(</span><span class="n">GameObject</span><span class="w"> </span><span class="n">tileRoot</span><span class="p">)</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">        </span><span class="c1">// Custom bounds calculation logic here</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="p">}</span>
+</span></code></pre></div>
+</details>
+<p>If you only need to filter out specific objects but otherwise keep the existing behaviour, you could instead derive a new class from <code>DefaultTileBoundsCalculator</code> and override the <code>ShouldUseComponentBounds()</code> method as demonstrated below:</p>
+<details class="example">
+<summary>Custom Object Filtering</summary>
+<p>In this example, we filter out any component whose GameObject does not have the required tag.</p>
+<div class="language-C# highlight"><span class="filename">TaggedBoundsCalculator.cs</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">using</span><span class="w"> </span><span class="nn">DunGen</span><span class="p">;</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="k">using</span><span class="w"> </span><span class="nn">DunGen.TileBounds</span><span class="p">;</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="k">using</span><span class="w"> </span><span class="nn">UnityEngine</span><span class="p">;</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="na">[SubclassDisplay(displayName: &quot;Tagged Bounds&quot;)]</span><span class="c1">//(1)!</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">TaggedBoundsCalculator</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">DefaultTileBoundsCalculator</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="p">{</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">RequiredTag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;BoundsObject&quot;</span><span class="p">;</span><span class="c1">//(2)!</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">    </span><span class="k">protected</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="nf">ShouldUseComponentBounds</span><span class="p">(</span><span class="n">Component</span><span class="w"> </span><span class="n">comp</span><span class="p">)</span><span class="c1">//(3)!</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">        </span><span class="c1">// If the base class says not to use it, we won&#39;t use it</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="k">base</span><span class="p">.</span><span class="n">ShouldUseComponentBounds</span><span class="p">(</span><span class="n">comp</span><span class="p">))</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="k">false</span><span class="p">;</span>
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">        </span><span class="c1">// Only use the component if its GameObject has the required tag</span>
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">comp</span><span class="p">.</span><span class="n">gameObject</span><span class="p">.</span><span class="n">CompareTag</span><span class="p">(</span><span class="n">RequiredTag</span><span class="p">);</span>
+</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="p">}</span>
+</span></code></pre></div>
+<ol>
+<li>The <code>SubclassDisplay</code> attribute can be used to show a custom display name in the inspector</li>
+<li>A Unity tag that a GameObject must have for its component bounds to be considered</li>
+<li>We override <code>ShouldUseComponentBounds()</code> to add custom filtering logic without re-implementing the full bounds calculation</li>
+</ol>
+</details>
 <hr />
 <p>By understanding and utilizing these <code>Tile</code> component settings, you gain significantly more control over how your individual Tile prefabs behave and integrate into the final generated dungeon layout.</p>
 
