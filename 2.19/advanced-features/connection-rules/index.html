@@ -964,15 +964,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#rule-priority" class="md-nav__link">
-    <span class="md-ellipsis">
-      Rule Priority
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#when-to-use-which-method" class="md-nav__link">
     <span class="md-ellipsis">
       When to Use Which Method
@@ -1181,7 +1172,7 @@
   
   
   <span class="md-ellipsis">
-    Culling
+    Built-in Culling
     
   </span>
   
@@ -1734,15 +1725,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#rule-priority" class="md-nav__link">
-    <span class="md-ellipsis">
-      Rule Priority
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#when-to-use-which-method" class="md-nav__link">
     <span class="md-ellipsis">
       When to Use Which Method
@@ -1771,12 +1753,12 @@
 <p>By default, DunGen tries to connect any two compatible <a href="../../getting-started/1-creating-tiles/">Doorways</a> that line up correctly. However, sometimes you need more control. You might want to prevent certain types of rooms from connecting directly (like two dead-end corridors) or enforce specific connection patterns (like ensuring puzzle rooms only connect to main halls).</p>
 <p>DunGen provides <strong>Tile Connection Rules</strong> to achieve this level of control, offering two primary methods:</p>
 <ol>
-<li><strong>Tag-Based Rules (Inspector):</strong> A simple, visual way to define rules based on tags you assign to your tiles or doorways. Configured in the <a href="../../core-concepts/dungeon-flow/">Dungeon Flow</a> asset.</li>
+<li><strong>Tag-Based Rules (Inspector):</strong> A simple, visual way to define rules based on tags you assign to your tiles. Configured in the <a href="../../core-concepts/dungeon-flow/">Dungeon Flow</a> asset.</li>
 <li><strong>Code-Based Rules (Advanced):</strong> Allows you to write custom C# logic for complex connection scenarios, providing fine-grained control based on tile properties, doorway types, or even game state.</li>
 </ol>
 <hr />
 <h2 id="method-1-tag-based-rules-inspector">Method 1: Tag-Based Rules (Inspector)</h2>
-<p>This method uses DunGen's built-in tag system. You define custom tags, assign them to your <a href="../../core-concepts/tiles/">Tile</a> prefabs or <a href="../../core-concepts/doorways/">Doorways</a>, and then set rules in the Dungeon Flow asset based on pairings of these tags.</p>
+<p>This method uses DunGen's built-in tag system. You define custom tags, assign them to your <a href="../../core-concepts/tiles/">Tile</a> prefabs, and then set rules in the Dungeon Flow asset based on pairings of these tags.</p>
 <p><strong>Step 1: Define Tags</strong></p>
 <p><a class="glightbox" href="../../assets/images/advanced-features/tags-window.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img align="right" alt="Tags Window" src="../../assets/images/advanced-features/tags-window.png" /></a></p>
 <ul>
@@ -1788,24 +1770,23 @@
 <p class="admonition-title">DunGen Tags vs. Unity Tags</p>
 <p>These are DunGen-specific tags and are separate from Unity's built-in GameObject tags.</p>
 </div>
-<p><strong>Step 2: Assign Tags to Tiles or Doorways</strong></p>
+<p><strong>Step 2: Assign Tags to Tiles</strong></p>
 <ul>
-<li>Select your Tile prefab or Doorway</li>
-<li>At the bottom of the inspector, find the <strong>Tags</strong> list.</li>
+<li>Select your Tile prefab in the Project view.</li>
+<li>Ensure it has a <code>Tile</code> component (DunGen adds one automatically if needed, or add it manually: <code>Add Component &gt; DunGen &gt; Tile</code>).</li>
+<li>At the bottom of the <code>Tile</code> component inspector, find the <strong>Tags</strong> list.</li>
 <li>Click the '+' button to add a tag slot, then select the desired tag from the dropdown menu.</li>
-<li>A single tile or doorway can have multiple tags assigned to it.</li>
+<li>A single tile can have multiple tags assigned to it.</li>
 </ul>
 <p><strong>Step 3: Configure Rules in Dungeon Flow</strong></p>
 <ul>
 <li>Select your <code>Dungeon Flow</code> asset in the Project view.</li>
-<li>Expand the <strong>Connection Rules</strong> section at the bottom of the Inspector.</li>
-<li><strong>Tile vs Doorway:</strong> Tags can be applied to doorways or the Tile itself. Choose whichever makes most sense for your use-case (or combine them if needed).</li>
+<li>Find the <strong>Tile Connection Rules</strong> section at the bottom of the Inspector.</li>
 <li><strong>Mode:</strong> Choose how the rules are applied:<ul>
 <li><code>Accept</code>: Tiles are <strong>only allowed</strong> to connect if <strong>both</strong> tiles have a tag that matches <strong>one of the defined Tag Pairs</strong> below. If a potential connection doesn't match any pair, it's rejected.</li>
 <li><code>Reject</code>: Tiles are <strong>always allowed</strong> to connect <strong>unless</strong> <strong>both</strong> tiles have a tag that matches <strong>one of the defined Tag Pairs</strong> below. If a potential connection matches a pair, it's rejected.</li>
 </ul>
 </li>
-<li><strong>Override Sockets (Doorways only):</strong> If checked, DunGen will ignore socket requirements when testing tag pairs. This means you can, for example, say that all doorways that both have a 'Corridor' tag are allowed to connect, even if they have different sockets.</li>
 <li><strong>Tag Pairs:</strong> This list defines the specific tag combinations the <code>Mode</code> setting acts upon.<ul>
 <li>Click the '+' button to add a new pair.</li>
 <li>Use the dropdowns to select the two tags for the pair (e.g., Tag A &lt;-&gt; Tag B). The order doesn't matter (<code>Room &lt;-&gt; Corridor</code> is the same as <code>Corridor &lt;-&gt; Room</code>).</li>
@@ -1919,14 +1900,6 @@
 </span><span id="__span-1-52"><a id="__codelineno-1-52" name="__codelineno-1-52" href="#__codelineno-1-52"></a><span class="w">    </span><span class="p">}</span>
 </span><span id="__span-1-53"><a id="__codelineno-1-53" name="__codelineno-1-53" href="#__codelineno-1-53"></a><span class="p">}</span>
 </span></code></pre></div>
-<hr />
-<h2 id="rule-priority">Rule Priority</h2>
-<p>It's possible to mix-and-match Tile rules, Doorway rules, and custom rules specified in code. You'll need to be careful when mixing different rule types as it's not obvious at a glance how these rules interact. The order for processing rules is as follows:</p>
-<ol>
-<li><strong>Custom code rules</strong> are processed first. If any rule returns an <code>Allow</code> or <code>Deny</code> result, no additional rules are processed. If all rules return a <code>Passthrough</code> result, we continue with the rules in the <code>DungeonFlow</code>.</li>
-<li><strong>Tile rules</strong> are processed next. If the tile rules deny the connection, we stop here. If the tile rules allow the connection, we continue to the final set of rules.</li>
-<li>Finally, <strong>Doorway rules</strong> are processed.</li>
-</ol>
 <hr />
 <h2 id="when-to-use-which-method">When to Use Which Method</h2>
 <ul>

@@ -1166,7 +1166,7 @@
   
   
   <span class="md-ellipsis">
-    Culling
+    Built-in Culling
     
   </span>
   
@@ -1769,15 +1769,6 @@
 </ul>
 </li>
 <li>
-<p><strong>Depth Mode:</strong> Which depth information is used to modify the base weights using the <code>Depth Scale</code> curve below.</p>
-<ul>
-<li><strong>None:</strong> No depth scaling applied. The <code>Main Path Weight</code> and <code>Branch Path Weight</code> stand as they are.</li>
-<li><strong>Auto:</strong> Depth along the <strong>Main Path</strong> is used if the tile is on the main path, and depth along the current <strong>Branch Path</strong> is used if the tile is on a branch path.</li>
-<li><strong>Main Path Depth:</strong> Uses the normalized (0-1) depth along the main path, even if the tile is on a branch.</li>
-<li><strong>Branch Depth:</strong> Uses the normalized (0-1) depth along the current branch, or <code>0</code> if the tile in on the main path.</li>
-</ul>
-</li>
-<li>
 <p><strong>Depth Scale (Curve):</strong> This is a powerful modifier that allows the item's likelihood to <strong>change based on how deep into the path</strong> it's being placed.</p>
 <ul>
 <li><strong>How it works:</strong> The curve graph adjusts the <em>effective</em> weight.<ul>
@@ -1785,18 +1776,19 @@
 <li>The <strong>Y-axis</strong> represents a <strong>multiplier</strong> (0 = zero chance, 1 = use the base weight exactly, 2 = double the base weight, etc.).</li>
 </ul>
 </li>
-<li>DunGen calculates the current depth (0-1), finds the corresponding multiplier value on the Y-axis of the curve, and multiplies the appropriate base weight (Main or Branch) by this value.</li>
+<li>
+<p>DunGen calculates the current depth (0-1), finds the corresponding multiplier value on the Y-axis of the curve, and multiplies the appropriate base weight (Main or Branch) by this value.</p>
+</li>
+<li>
+<p><strong>Example:</strong></p>
+<ul>
+<li>Imagine a curve that starts low (Y=0.1) at the beginning (X=0) and ramps up high (Y=2.0) at the end (X=1).</li>
+<li>An item with this curve would be <em>unlikely</em> to appear near the start of the dungeon path (base weight * 0.1) but <em>very likely</em> (base weight * 2.0) to appear near the end.</li>
+</ul>
+</li>
 </ul>
 </li>
 </ol>
-<figure>
-<p><strong>Example:</strong>
-<a class="glightbox" href="../../assets/images/core-concepts/depth-curve-example.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Tile Weights" src="../../assets/images/core-concepts/depth-curve-example.png" /></a></p>
-<figcaption>
-<p>Example depth scale curve. Starts low (Y=0) at the beginning (X=0) and ramps up high (Y=1) at the end (X=1)</p>
-</figcaption>
-</figure>
-<p>An item with this curve would <em>never</em> appear at the start of the dungeon path (base weight * 0.0) but would be <em>increasingly likely</em> (base weight * 1.0) to appear near the end.</p>
 <hr />
 <h2 id="putting-it-together">Putting it Together</h2>
 <p>The final chance of an item being chosen at any given point is calculated roughly like this:</p>
@@ -1805,10 +1797,10 @@
 <hr />
 <h2 id="practical-examples">Practical Examples</h2>
 <ul>
-<li><strong>Common Room:</strong> <code>Main Path Weight = 1</code>, <code>Branch Path Weight = 1</code>, <code>Depth Mode = None</code>. (Equal chance everywhere)</li>
-<li><strong>Early Game Room:</strong> <code>Main Path Weight = 1</code>, <code>Branch Path Weight = 1</code>, <code>Depth Mode = Main Path Depth</code>, <code>Depth Scale = Starts high (Y=1), drops low (Y=0.1) near the end</code>. (Common early, rare late)</li>
-<li><strong>Boss Room Ante-chamber:</strong> <code>Main Path Weight = 1</code>, <code>Branch Path Weight = 0</code>, <code>Depth Mode = Main Path Depth</code>, <code>Depth Scale = Starts very low (Y=0), sharply rises only near the end (X=0.9 to 1.0)</code>. (Only appears on the main path, right before the goal)</li>
-<li><strong>Secret Room (Branches Only):</strong> <code>Main Path Weight = 0</code>, <code>Branch Path Weight = 1</code>, <code>Depth Mode = None</code>. (Only appears in branches, equal chance throughout branch length)</li>
+<li><strong>Common Room:</strong> <code>Main Path Weight = 1</code>, <code>Branch Path Weight = 1</code>, <code>Depth Scale = Flat line at Y=1</code>. (Equal chance everywhere)</li>
+<li><strong>Early Game Room:</strong> <code>Main Path Weight = 1</code>, <code>Branch Path Weight = 1</code>, <code>Depth Scale = Starts high (Y=1), drops low (Y=0.1) near the end</code>. (Common early, rare late)</li>
+<li><strong>Boss Room Ante-chamber:</strong> <code>Main Path Weight = 1</code>, <code>Branch Path Weight = 0</code>, <code>Depth Scale = Starts very low (Y=0), sharply rises only near the end (X=0.9 to 1.0)</code>. (Only appears on the main path, right before the goal)</li>
+<li><strong>Secret Room (Branches Only):</strong> <code>Main Path Weight = 0</code>, <code>Branch Path Weight = 1</code>, <code>Depth Scale = Flat line at Y=1</code>. (Only appears in branches, equal chance throughout branch length)</li>
 </ul>
 <p>By combining these three components, you can precisely control the frequency and placement context of your tiles and props within the generated dungeons.</p>
 

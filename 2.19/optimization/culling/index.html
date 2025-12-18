@@ -22,7 +22,7 @@
     
     
       
-        <title>Culling - DunGen</title>
+        <title>Built-in Culling - DunGen</title>
       
     
     
@@ -83,7 +83,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#optimization-culling" class="md-skip">
+        <a href="#optimization-built-in-culling" class="md-skip">
           Skip to content
         </a>
       
@@ -125,7 +125,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Culling
+              Built-in Culling
             
           </span>
         </div>
@@ -1097,7 +1097,7 @@
   
   
   <span class="md-ellipsis">
-    Culling
+    Built-in Culling
     
   </span>
   
@@ -1110,7 +1110,7 @@
   
   
   <span class="md-ellipsis">
-    Culling
+    Built-in Culling
     
   </span>
   
@@ -1133,60 +1133,36 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#culling-strategies" class="md-nav__link">
+  <a href="#how-it-works" class="md-nav__link">
     <span class="md-ellipsis">
-      Culling Strategies
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Culling Strategies">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#adjacency-culling" class="md-nav__link">
-    <span class="md-ellipsis">
-      Adjacency Culling
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#frustum-culling" class="md-nav__link">
-    <span class="md-ellipsis">
-      Frustum Culling
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#portal-culling" class="md-nav__link">
-    <span class="md-ellipsis">
-      Portal Culling
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#choosing-the-right-strategy" class="md-nav__link">
-    <span class="md-ellipsis">
-      Choosing the Right Strategy
+      How it Works
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#global-vs-per-camera-culling" class="md-nav__link">
+  <a href="#enabling-culling" class="md-nav__link">
     <span class="md-ellipsis">
-      Global vs Per-Camera Culling
+      Enabling Culling
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#choosing-the-right-component" class="md-nav__link">
+    <span class="md-ellipsis">
+      Choosing the Right Component
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#component-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Component Settings
     </span>
   </a>
   
@@ -1719,60 +1695,36 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#culling-strategies" class="md-nav__link">
+  <a href="#how-it-works" class="md-nav__link">
     <span class="md-ellipsis">
-      Culling Strategies
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Culling Strategies">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#adjacency-culling" class="md-nav__link">
-    <span class="md-ellipsis">
-      Adjacency Culling
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#frustum-culling" class="md-nav__link">
-    <span class="md-ellipsis">
-      Frustum Culling
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#portal-culling" class="md-nav__link">
-    <span class="md-ellipsis">
-      Portal Culling
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#choosing-the-right-strategy" class="md-nav__link">
-    <span class="md-ellipsis">
-      Choosing the Right Strategy
+      How it Works
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#global-vs-per-camera-culling" class="md-nav__link">
+  <a href="#enabling-culling" class="md-nav__link">
     <span class="md-ellipsis">
-      Global vs Per-Camera Culling
+      Enabling Culling
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#choosing-the-right-component" class="md-nav__link">
+    <span class="md-ellipsis">
+      Choosing the Right Component
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#component-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Component Settings
     </span>
   </a>
   
@@ -1803,147 +1755,101 @@
 
 
 
-<h1 id="optimization-culling">Optimization: Culling</h1>
-<p>DunGen includes a built-in visibility culling system to minimize how many rooms (tiles) are rendered at once. To use it, add the <code>Culling Camera</code> component to your player camera (<code>Add Component &gt; DunGen &gt; Culling &gt; Culling Camera</code>).</p>
-<hr />
-<h2 id="culling-strategies">Culling Strategies</h2>
-<p>Several strategies are supported, each with different performance trade-offs. Select one using the <code>Strategy</code> dropdown on the <code>Culling Camera</code> component.</p>
-<hr />
-<h3 id="adjacency-culling">Adjacency Culling</h3>
-<figure>
-<p><a class="glightbox" href="../../assets/images/optimization/adjacency-culling.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Adjacency Culling" src="../../assets/images/optimization/adjacency-culling.png" /></a></p>
-<figcaption>
-<p>Tile depth = 2. Cyan area is the player's camera frustum.</p>
-</figcaption>
-</figure>
-<p>Adjacency culling shows only the room the player is in plus nearby rooms (outward recursively up to a configured depth). Everything else is hidden.</p>
-<p>It offers consistently high performance and very stable CPU cost, but at low depths the player could notice rooms popping in through open doorways. Auto-closing doors help hide this.</p>
-<ul>
-<li><strong>Settings:</strong><ul>
-<li><strong><code>Character</code>:</strong> Used as the centre of culling (usually the player).</li>
-<li><strong><code>Adjacent Tile Depth</code>:</strong><ul>
-<li><code>0</code>: Only the current tile.</li>
-<li><code>1</code>: Current tile + directly connected neighbours.</li>
-<li><code>2+</code>: Expands breadth-first per step.</li>
-<li>Higher values reduce culling effectiveness.</li>
-</ul>
-</li>
-<li><strong><code>Cull Behind Closed Doors</code>:</strong><ul>
-<li>Stops traversal through doorways whose <code>Door.IsOpen == false</code>.</li>
-<li>Requires your door prefabs correctly update the <code>Door</code> component. See <a href="../../advanced-features/doors/">Doors</a>.</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<div class="admonition tip">
-<p class="admonition-title">When to use it?</p>
-<p>Use Adjacency Culling when:</p>
-<ul>
-<li>The camera is inside the dungeon (first-person, over-the-shoulder, tight third-person).</li>
-<li>You have (auto-)closing doors or narrow sightlines.</li>
-<li>You need highly predictable performance (e.g. VR, low-end hardware).</li>
-</ul>
-<p>Avoid very large depths; if you need higher depths, consider Portal Culling instead.</p>
+<h1 id="optimization-built-in-culling">Optimization: Built-in Culling</h1>
+<p>DunGen includes a basic, built-in visibility culling system designed primarily for optimizing <strong>interior dungeons viewed from a first-person (or over the shoulder third-person) perspective</strong>. It works particularly well when doorways have doors that automatically close behind the player.</p>
+<div class="admonition warning">
+<p class="admonition-title">Use Case Specific</p>
+<p>This built-in solution is quite specific and <strong>may not be suitable for all game types</strong>, such as top-down games. It relies on a simple adjacency check rather than true camera frustum culling.</p>
 </div>
 <hr />
-<h3 id="frustum-culling">Frustum Culling</h3>
-<figure>
-<p><a class="glightbox" href="../../assets/images/optimization/frustum-culling.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Frustum Culling" src="../../assets/images/optimization/frustum-culling.png" /></a></p>
-<figcaption>
-<p>Cyan area is the player's camera frustum.</p>
-</figcaption>
-</figure>
-<p>Frustum culling mirrors Unity's built‑in frustum culling but operates at the tile level: an entire tile is culled or shown based on the bounds of the tile instead of testing each renderer individually. It typically hides fewer tiles than the other strategies.</p>
-<div class="admonition tip">
-<p class="admonition-title">When to use it?</p>
-<p>Choose Frustum Culling when:</p>
-<ul>
-<li>The camera is outside or significantly above the dungeon (top-down / isometric).</li>
-<li>Door-based occlusion is ineffective (mostly open layouts).</li>
-</ul>
-<p>It is less aggressive, so gains may be modest.</p>
-</div>
-<hr />
-<h3 id="portal-culling">Portal Culling</h3>
-<figure>
-<p><a class="glightbox" href="../../assets/images/optimization/portal-culling.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Portal Culling" src="../../assets/images/optimization/portal-culling.png" /></a></p>
-<figcaption>
-<p>Cyan area is the player's camera frustum. Magenta areas are projected frustums through visible portals.</p>
-</figcaption>
-</figure>
-<p>Portal culling projects the camera frustum through visible doorways (treating them as portals). A room is visible if it is directly seen or seen through a chain of doorways. The number of visible rooms changes dynamically with player orientation: looking at a blank wall may show only one room; looking down a long corridor may reveal many.</p>
-<div class="admonition tip">
-<p class="admonition-title">When to use it?</p>
-<p>Use Portal Culling when:</p>
-<ul>
-<li>The camera resides inside the dungeon tiles (first-person or tight third-person).</li>
-<li>You have long corridors / aligned doorways that create deep sightlines and you want them rendered only when actually looked down.</li>
-<li>Pop-in must be minimized while still culling aggressively when the player faces occluding geometry.</li>
-<li>Doors may stay open and adjacency depth would otherwise need to be large.
-Performance Notes:</li>
-<li>CPU cost varies with how many portals are in view and recursion depth (worst case: looking into a hub with many doorways, or a long corridor).</li>
-<li>Ensure doorway geometry (portal rectangles) closely matches openings; oversized bounds reduce effectiveness.</li>
-</ul>
-<p>Avoid Portal Culling if:</p>
-<ul>
-<li>The camera is top-down/outside the dungeon.</li>
-<li>Most rooms are fully open (few occluding walls) — Frustum or Adjacency may then be simpler.</li>
-</ul>
-</div>
-<hr />
-<h2 id="choosing-the-right-strategy">Choosing the Right Strategy</h2>
-<p>Use this section as a quick decision aid:</p>
+<h2 id="how-it-works">How it Works</h2>
+<p>The system determines which Tiles should be <em>visible</em> based on simple rules:</p>
 <ol>
-<li>Where is the camera?<ul>
-<li>Inside / immersive view (FPS / TPS) → Prefer Adjacency or Portal.</li>
-<li>Above / detached (top-down / isometric) → Frustum (others may under‑cull or malfunction).</li>
-</ul>
-</li>
-<li>Are doors common and usually closed?<ul>
-<li>Yes → Adjacency (low depth) is typically best.</li>
-</ul>
-</li>
-<li>Are there long, aligned sightlines you only want when actually viewed?<ul>
-<li>Yes → Portal Culling.</li>
-</ul>
-</li>
-<li>Do you need extremely predictable frame times (e.g. VR)?<ul>
-<li>Yes → Adjacency (fixed traversal cost).</li>
-</ul>
-</li>
-<li>Are memory / draw call limits tight but CPU budget small?<ul>
-<li>Adjacency (cheap CPU, strongest average cull).</li>
+<li><strong>Player's Location:</strong> The Tile the player (or target camera/object) is currently inside is always considered visible.</li>
+<li><strong>Adjacency:</strong> Tiles directly connected to the player's current Tile are considered visible. This check can extend outwards to neighbours of neighbours, up to a configurable depth (<code>Adjacent Tile Depth</code>).</li>
+<li><strong>Closed Doors (Optional):</strong> If enabled (<code>Cull Behind Closed Doors</code>), tiles that would otherwise be visible via adjacency are hidden (culled) if the doorway connecting them to an already visible tile is blocked by a <strong>closed</strong> <code>Door</code> component.</li>
+</ol>
+<p>Any Tile <em>not</em> considered visible by these rules will have its Renderers temporarily disabled, preventing them from being drawn by the camera.</p>
+<hr />
+<h2 id="enabling-culling">Enabling Culling</h2>
+<p>To use the built-in culling:</p>
+<ol>
+<li>Select the <strong>Camera</strong> GameObject you want the culling to apply to in your scene.</li>
+<li>Add one of the following DunGen culling components to it:<ul>
+<li><code>Adjacent Room Culling</code></li>
+<li><code>Adjacent Room Culling (Multi-Cam)</code></li>
 </ul>
 </li>
 </ol>
-<div class="admonition tip">
-<p class="admonition-title">Rule of Thumb</p>
+<hr />
+<h2 id="choosing-the-right-component">Choosing the Right Component</h2>
+<p>There are two versions of the component, each with trade-offs:</p>
 <ul>
-<li>Start with Adjacency (depth 1–2). If players notice voids where rooms should be, try Portal Culling.</li>
-<li>If your camera ever leaves interior space or has a bird's-eye view, switch to Frustum Culling.</li>
-<li>Profile worst-case scenes (open hubs) for Portal Culling to ensure recursion cost is acceptable.</li>
+<li>
+<p><strong><code>Adjacent Room Culling</code> (Basic):</strong></p>
+<ul>
+<li><strong>Pros:</strong> Very efficient, minimal performance overhead.</li>
+<li><strong>Cons:</strong><ul>
+<li>Only functions correctly for the <strong>single camera</strong> it's attached to. Results viewed from the Scene view or other cameras may appear incorrect.</li>
+<li>It directly modifies the enabled state of Renderers and <strong>leaves them in their culled state</strong>. This means any other script trying to control renderer visibility might conflict or have its changes overwritten.</li>
 </ul>
-</div>
-<div class="admonition abstract">
-<p class="admonition-title">Comparative Summary</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong><code>Adjacent Room Culling (Multi-Cam)</code>:</strong></p>
 <ul>
-<li>Adjacency: Deterministic cost, strongest average culling, possible visible pop-in without door occlusion.</li>
-<li>Portal: Adaptive, best visual fidelity vs overdraw, variable CPU cost.</li>
-<li>Frustum: Simplest, lowest variability, weakest culling aggressiveness.</li>
+<li><strong>Pros:</strong><ul>
+<li>Works correctly with <strong>multiple cameras</strong> viewing the scene.</li>
+<li>Properly <strong>restores the original enabled state</strong> of renderers after the camera finishes rendering, preventing conflicts with other scripts.</li>
+</ul>
+</li>
+<li><strong>Cons:</strong> Significantly more performance-intensive than the basic version due to the state management overhead per frame.</li>
+</ul>
+</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Which to Choose?</p>
+<ul>
+<li>Use <strong><code>Adjacent Room Culling</code> (Basic)</strong> if you only have one main game camera, performance is critical, and you don't have other systems managing renderer visibility.</li>
+<li>Use <strong><code>Adjacent Room Culling (Multi-Cam)</code></strong> if you need multi-camera support (like spectator cameras, mini-maps, split-screen) or if you need to ensure renderer states are preserved for other game systems.</li>
 </ul>
 </div>
 <hr />
-<h2 id="global-vs-per-camera-culling">Global vs Per-Camera Culling</h2>
-<p>By default, the <code>Culling Camera</code> uses global culling (<code>Per Camera Culling</code> unchecked), where the rendering state of each room is set once from the point of view of the camera (there should be only one culling camera if using global culling). This is the best option for performance, but may not be feasible if you have multiple cameras rendering the scene.</p>
-<p>When <code>Per Camera Culling</code> is checked, DunGen will instead toggle the visibilities of each visible room one per-frame, per-camera. This allows for multiple cameras to render the scene, but at the cost of performance.</p>
-<p>As a rule of thumb, keep <code>Per Camera Culling</code> unchecked unless you need it.</p>
+<h2 id="component-settings">Component Settings</h2>
+<p>Both culling components share the same settings:</p>
+<ul>
+<li>
+<p><strong><code>Adjacent Tile Depth</code>:</strong></p>
+<ul>
+<li>Controls how many steps away from the player's current tile are considered visible.</li>
+<li><code>0</code>: Only the tile the player is currently in is visible.</li>
+<li><code>1</code>: The current tile and all directly adjacent tiles are visible.</li>
+<li><code>2</code>: The current tile, its neighbours, and <em>their</em> neighbours are visible, and so on.</li>
+<li>Higher values show more of the dungeon but reduce the effectiveness of the culling.</li>
+</ul>
+</li>
+<li>
+<p><strong><code>Cull Behind Closed Doors</code>:</strong></p>
+<ul>
+<li>If checked, visibility checks will be blocked by doorways that have a <code>Door</code> component whose <code>IsOpen</code> property is <code>false</code>.</li>
+<li>This requires that your door prefabs (used as <a href="../../getting-started/2-doorways/">Connectors in Doorways</a> or via the <a href="../../advanced-features/lock-key-system/">Lock &amp; Key system</a>) have a script that correctly manages the <code>Door</code> component and its <code>IsOpen</code> state. See the <a href="../../advanced-features/doors/">Doors</a> page for more details on the <code>Door</code> component.</li>
+</ul>
+</li>
+<li>
+<p><strong><code>Target Override</code>:</strong></p>
+<ul>
+<li>An optional <code>Transform</code> component. By default, the culling system uses the position of the camera it's attached to for visibility checks.</li>
+<li>If your player character controller is physically separate from the camera object, you can drag the player's root Transform here. The system will then use the <code>Target Override</code> object's position to determine the "current tile" instead of the camera's position.</li>
+</ul>
+</li>
+</ul>
 <hr />
 <h2 id="alternatives-integration">Alternatives &amp; Integration</h2>
 <p>If the built-in culling doesn't meet your needs, consider:</p>
 <ul>
-<li><strong>Third-Party Assets:</strong> Tools like <a href="../../integrations/sectr/">SECTR</a> (integrates directly with DunGen) provide advanced portal / sector systems.</li>
-<li><strong>Custom Integration:</strong> Derive from <code>DunGen.Adapters.CullingAdapter</code> and implement <code>PrepareForCulling</code>. DunGen invokes this during <a href="../../advanced-features/post-processing/">post-processing</a>, letting you feed visibility data into another system.</li>
+<li><strong>Third-Party Assets:</strong> Solutions like <a href="../../integrations/sectr/">SECTR</a> (which has direct DunGen integration) offer portal-based culling.</li>
+<li><strong>Custom Integration:</strong> You can integrate other culling systems by creating a custom adapter class derived from <code>DunGen.Adapters.CullingAdapter</code> and implementing the <code>PrepareForCulling</code> method. DunGen will execute this as part of its <a href="../../advanced-features/post-processing/">post-processing</a> steps.</li>
 </ul>
 
 

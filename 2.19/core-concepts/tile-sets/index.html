@@ -1199,7 +1199,7 @@
   
   
   <span class="md-ellipsis">
-    Culling
+    Built-in Culling
     
   </span>
   
@@ -1847,7 +1847,6 @@
 <li><strong>Weights per Tile:</strong> Each Tile entry has its own weight settings:<ul>
 <li><strong>Main Path:</strong> The base chance of this tile being chosen when this Tile Set is used for the dungeon's main path.</li>
 <li><strong>Branch Path:</strong> The base chance of this tile being chosen when this Tile Set is used for an optional branch path.</li>
-<li><strong>Depth Mode:</strong> How the base weight is modified by the <code>Depth Scale</code> curve below.</li>
 <li><strong>Depth Scale:</strong> A curve that modifies the Main/Branch path weight based on the tile's normalized depth (0=start, 1=end) along the current path.</li>
 <li><em>(For a full explanation of how these weights interact, see the <a href="../weighting/">Weighting</a> page).</em></li>
 </ul>
@@ -1861,9 +1860,9 @@
 <h3 id="locked-door-prefabs">Locked Door Prefabs</h3>
 <p>This section allows you to define which prefabs DunGen should use when it needs to place a <strong>locked door</strong> involving a Tile from <em>this</em> Tile Set. This is part of the <a href="../../advanced-features/lock-key-system/">Lock &amp; Key System</a>.</p>
 <ul>
-<li><strong>Adding Entries:</strong> Click the <code>+</code> button under <code>Lock Prefabs</code> to create a new entry for a specific <a href="../doorways/#doorway-sockets">Doorway Socket type</a>.</li>
+<li><strong>Adding Entries:</strong> Click "Add" to create a new entry for a specific <a href="../doorways/#doorway-sockets">Doorway Socket type</a>.</li>
 <li><strong>Socket Type:</strong> Select the Doorway Socket asset this entry applies to from the dropdown.</li>
-<li><strong>Prefab Weights:</strong> Click the <code>+</code> button on the <code>Prefabs</code> list within the socket entry. Drag your locked door prefab(s) here.<ul>
+<li><strong>Prefab Weights:</strong> Click "Add New Prefab" within the socket entry. Drag your locked door prefab(s) here.<ul>
 <li>If you add multiple prefabs for the <em>same socket type</em>, their individual weights determine the chance of each one being chosen when a locked door of that socket type is needed.</li>
 </ul>
 </li>
