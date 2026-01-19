@@ -717,6 +717,8 @@
       
         
       
+        
+      
     
     
     
@@ -1000,6 +1002,29 @@
   
   <span class="md-ellipsis">
     DunGen Character Component
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced-features/generation-pipeline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Generation Pipeline
     
   </span>
   
@@ -1529,6 +1554,84 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#dungeon-analysis-window" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dungeon Analysis Window
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#built-in-analysis-modules" class="md-nav__link">
+    <span class="md-ellipsis">
+      Built-in Analysis Modules
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Built-in Analysis Modules">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#generation-stats" class="md-nav__link">
+    <span class="md-ellipsis">
+      Generation Stats
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#path-lengths" class="md-nav__link">
+    <span class="md-ellipsis">
+      Path Lengths
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#props" class="md-nav__link">
+    <span class="md-ellipsis">
+      Props
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tile-prefab-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tile Prefab Usage
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dungeon-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dungeon Validation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#custom-analysis-modules" class="md-nav__link">
+    <span class="md-ellipsis">
+      Custom Analysis Modules
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#asynchronous-generation-visualization" class="md-nav__link">
     <span class="md-ellipsis">
       Asynchronous Generation Visualization
@@ -1695,6 +1798,84 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#dungeon-analysis-window" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dungeon Analysis Window
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#built-in-analysis-modules" class="md-nav__link">
+    <span class="md-ellipsis">
+      Built-in Analysis Modules
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Built-in Analysis Modules">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#generation-stats" class="md-nav__link">
+    <span class="md-ellipsis">
+      Generation Stats
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#path-lengths" class="md-nav__link">
+    <span class="md-ellipsis">
+      Path Lengths
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#props" class="md-nav__link">
+    <span class="md-ellipsis">
+      Props
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tile-prefab-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tile Prefab Usage
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dungeon-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dungeon Validation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#custom-analysis-modules" class="md-nav__link">
+    <span class="md-ellipsis">
+      Custom Analysis Modules
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#asynchronous-generation-visualization" class="md-nav__link">
     <span class="md-ellipsis">
       Asynchronous Generation Visualization
@@ -1737,20 +1918,10 @@
 <h2 id="runtime-analyzer-component">Runtime Analyzer Component</h2>
 <p>For quantitative analysis, especially regarding performance and success rates over multiple runs, DunGen provides the <code>Runtime Analyzer</code> component.</p>
 <ul>
-<li><strong>What it Does:</strong> This component repeatedly generates dungeons using specified settings and gathers statistics about the process, such as average generation time, failure rates, and time spent on different generation steps.</li>
-<li><strong>How to Use (Easiest Way):</strong><ol>
-<li>Locate the demo scene provided with DunGen: <code>Assets/DunGen/Demo/Analysis Scene</code>.</li>
-<li>Open this scene.</li>
-<li>Find the <code>Analyzer</code> GameObject in the hierarchy.</li>
-<li>In the Inspector, find the <code>Runtime Dungeon (Script)</code> component attached to the <code>Analyzer</code> GameObject.</li>
-<li>Replace the default <code>Dungeon Flow</code> asset in its slot with <strong>your own</strong> <code>Dungeon Flow</code> asset that you want to test.</li>
-<li>Enter Play mode. The analyser will run multiple generation cycles (configurable on the <code>Runtime Analyzer</code> component) and print the statistics to the Console once finished.</li>
-</ol>
-</li>
-<li><strong>How to Use (Manual Setup):</strong><ol>
-<li>Add the <code>Runtime Analyzer</code> component to a GameObject in your scene (<code>Add Component &gt; DunGen &gt; Analysis &gt; Runtime Analyzer</code>).</li>
-<li>Ensure this GameObject also has a <code>Runtime Dungeon</code> component configured with your desired settings.</li>
-<li>Configure the <code>Runtime Analyzer</code> settings (number of iterations, etc.).</li>
+<li><strong>What it Does:</strong> This component repeatedly generates dungeons using specified settings and gathers statistics about the process, such as average generation time, failure rates, and time spent on different generation steps. Once the analysis is complete, it outputs the results to the <a href="#dungeon-analysis-window">dungeon analysis window</a> for review.</li>
+<li><strong>How to Use:</strong><ol>
+<li>Add the <code>Runtime Analyzer</code> component to a GameObject in your scene (or use the provided scene <code>Assets/DunGen/Samples/Basic/Analysis Scene.unity</code>).</li>
+<li>Configure the <code>Runtime Analyzer</code> settings (select the <code>DungeonFlow</code>, number of iterations, etc.).</li>
 <li>Enter Play mode.</li>
 </ol>
 </li>
@@ -1759,6 +1930,8 @@
 <li>Average time taken per successful generation.</li>
 <li>Average time spent on specific phases (e.g., Main Path Generation, Branch Path Generation, Post-Processing).</li>
 <li>Average number of rooms in total, as well as individually on the Main Path and Branch Paths.</li>
+<li>The metrics provided come from a set of modules which can be enabled or disabled as needed by modifying the 'Analysis Modules' list in the <code>Runtime Analyzer</code> component.</li>
+<li><a href="#custom-analysis-modules">Custom modules</a> can be added to gather additional metrics as needed.</li>
 </ul>
 </li>
 <li><strong>Why it's Useful:</strong><ul>
@@ -1768,6 +1941,82 @@
 </ul>
 </li>
 </ul>
+<hr />
+<h2 id="dungeon-analysis-window">Dungeon Analysis Window</h2>
+<figure>
+<p><a class="glightbox" href="../../assets/images/troubleshooting/dungeon-analysis-window.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Dungeon Analysis Window" src="../../assets/images/troubleshooting/dungeon-analysis-window.png" /></a></p>
+<figcaption>
+<p>The dungeon analysis window displays detailed statistics and breakdowns of dungeon generation performance in a tree view format.</p>
+</figcaption>
+</figure>
+<p>The dungeon analysis window will appear automatically after analysis completes and displays analysis results in a tree view format, allowing you to explore detailed statistics and breakdowns of dungeon generation performance.</p>
+<ul>
+<li><strong>Search Bar:</strong> Quickly find specific metrics or categories by typing keywords.</li>
+<li><strong>Tree View:</strong> Expand and collapse categories to view detailed statistics about different aspects of the dungeon generation and the dungeon layout.</li>
+<li><strong>Histogram View:</strong> Visualize distributions of each metric (e.g., generation times, room counts) using histograms for better insight into performance characteristics and layout results.</li>
+<li><strong>Copy Button:</strong> Copy the displayed analysis data to the clipboard for easy sharing or documentation. Can be copied in tab-separated format for pasting into spreadsheets, and in a human-readable indented table for viewing in a text document (works best with a mono-spaced font).</li>
+<li><strong>Message Area:</strong> Displays important messages or warnings related to the analysis results. Messages can be filtered by severity (Info, Warning, Error) and duplicates can be collapsed for clarity.</li>
+</ul>
+<hr />
+<h2 id="built-in-analysis-modules">Built-in Analysis Modules</h2>
+<h3 id="generation-stats">Generation Stats</h3>
+<p>Gathers basic statistics about generation performance, including total generation time, number of tiles spawned (broken down by type), retry counts, and time taken for each generation step.</p>
+<h3 id="path-lengths">Path Lengths</h3>
+<p>Collects data on the lengths of the main path and branch paths in the generated dungeons, providing insights into layout complexity and variety.</p>
+<h3 id="props">Props</h3>
+<p>Records the number of instances of each global prop by ID placed in the generated dungeons.</p>
+<h3 id="tile-prefab-usage">Tile Prefab Usage</h3>
+<p>Tracks how often each tile prefab is used across all generated dungeons, helping identify overused or underutilized tiles in your tile set.</p>
+<h3 id="dungeon-validation">Dungeon Validation</h3>
+<p>Doesn't produce any metrics, but runs through a list of checks to enure that the dungeon was generated correctly. If any issues are found, they are reported as warnings or errors in the analysis results.</p>
+<p>This can help identify problems with your dungeon flow, tile set, or generation rules that may lead to unexpected layouts or generation failures. This module is quiet heavy on performance, so it is recommended to only enable it when debugging issues.</p>
+<p>Errors denote issues with the dungeon that should not have happened, such as violations of hard rules.</p>
+<p>Warnings indicate potential problems where a soft rule was broken (e.g., a branch path was shorter than the minimum length specified).</p>
+<hr />
+<h2 id="custom-analysis-modules">Custom Analysis Modules</h2>
+<p>DunGen's analysis system is extensible, allowing you to create custom analysis modules to gather specific metrics or perform specialized evaluations of your dungeon generation.</p>
+<p>To create a custom analysis module, implement the <code>IGenerationAnalysisModule</code> interface on a new class and add it to the list of analysis modules in the <code>Runtime Analyzer</code> component. Your module can then collect data during each generation cycle and contribute to the final analysis report. Any serialized fields on your module will be exposed in the inspector for configuration.</p>
+<p><strong>Example:</strong></p>
+<div class="language-C# highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">using</span><span class="w"> </span><span class="nn">DunGen</span><span class="p">;</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="k">using</span><span class="w"> </span><span class="nn">DunGen.Analysis</span><span class="p">;</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="k">using</span><span class="w"> </span><span class="nn">DunGen.Tags</span><span class="p">;</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="k">using</span><span class="w"> </span><span class="nn">System</span><span class="p">;</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="na">[Serializable]</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">CustomAnalysisModule</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">IGenerationAnalysisModule</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="p">{</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="c1">// A tag that can be set in the inspector to specify which tiles are considered important</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">Tag</span><span class="w"> </span><span class="n">ImportantTag</span><span class="p">;</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">    </span><span class="c1">// We&#39;re only interested in collecting statistics when a dungeon is successfully generated</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">    </span><span class="c1">// so we can leave the other methods empty.</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnAnalysisEnded</span><span class="p">(</span><span class="n">AnalysisResults</span><span class="w"> </span><span class="n">results</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnAnalysisStarted</span><span class="p">(</span><span class="n">AnalysisResults</span><span class="w"> </span><span class="n">results</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnDungeonGenerationFailed</span><span class="p">(</span><span class="n">AnalysisResults</span><span class="w"> </span><span class="n">results</span><span class="p">,</span><span class="w"> </span><span class="n">GenerationStats</span><span class="w"> </span><span class="n">stats</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">    </span><span class="c1">// Called each time a dungeon is successfully generated</span>
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnDungeonGenerated</span><span class="p">(</span><span class="n">AnalysisResults</span><span class="w"> </span><span class="n">results</span><span class="p">,</span><span class="w"> </span><span class="n">Dungeon</span><span class="w"> </span><span class="n">dungeon</span><span class="p">,</span><span class="w"> </span><span class="n">GenerationStats</span><span class="w"> </span><span class="n">stats</span><span class="p">)</span>
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="w">        </span><span class="c1">// Count the number of tiles with the ImportantTag tag</span>
+</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">importantTileCount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>
+</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="w">        </span><span class="k">foreach</span><span class="w"> </span><span class="p">(</span><span class="kt">var</span><span class="w"> </span><span class="n">tile</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">dungeon</span><span class="p">.</span><span class="n">AllTiles</span><span class="p">)</span>
+</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="w">        </span><span class="p">{</span>
+</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">tile</span><span class="p">.</span><span class="n">Tags</span><span class="p">.</span><span class="n">HasTag</span><span class="p">(</span><span class="n">ImportantTag</span><span class="p">))</span>
+</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="w">                </span><span class="n">importantTileCount</span><span class="o">++</span><span class="p">;</span>
+</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>
+</span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a><span class="w">        </span><span class="c1">// Store the result in a dot-separated key so it appears under a hierarchy in the analysis report</span>
+</span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a><span class="w">        </span><span class="n">results</span><span class="p">.</span><span class="n">AddValue</span><span class="p">(</span><span class="s">&quot;MyCustomModule.ImportantTileCount&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">importantTileCount</span><span class="p">);</span>
+</span><span id="__span-0-34"><a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a>
+</span><span id="__span-0-35"><a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a><span class="w">        </span><span class="c1">// If no important tiles were used, add a warning message to the report</span>
+</span><span id="__span-0-36"><a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">importantTileCount</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+</span><span id="__span-0-37"><a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a><span class="w">            </span><span class="n">results</span><span class="p">.</span><span class="n">Warning</span><span class="p">(</span><span class="s">&quot;No important tiles were used in the generated dungeon.&quot;</span><span class="p">);</span>
+</span><span id="__span-0-38"><a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-39"><a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a><span class="p">}</span>
+</span></code></pre></div>
 <hr />
 <h2 id="asynchronous-generation-visualization">Asynchronous Generation Visualization</h2>
 <p>Sometimes, seeing <em>how</em> the dungeon is built step-by-step is more revealing than statistics, especially when debugging layout failures or unexpected tile placements. You can achieve this using DunGen's asynchronous generation mode with pauses.</p>

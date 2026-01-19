@@ -717,6 +717,8 @@
       
         
       
+        
+      
     
     
     
@@ -1000,6 +1002,29 @@
   
   <span class="md-ellipsis">
     DunGen Character Component
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced-features/generation-pipeline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Generation Pipeline
     
   </span>
   
@@ -1638,6 +1663,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#im-getting-some-errors-after-installing-dungen" class="md-nav__link">
+    <span class="md-ellipsis">
+      I'm getting some errors after installing DunGen
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1757,6 +1791,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#im-getting-some-errors-after-installing-dungen" class="md-nav__link">
+    <span class="md-ellipsis">
+      I'm getting some errors after installing DunGen
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1776,12 +1819,20 @@
 <h1 id="frequently-asked-questions">Frequently Asked Questions</h1>
 <h2 id="can-dungen-be-used-for-2d-games">Can DunGen be used for 2D games?</h2>
 <p>Yes. DunGen works just as well with 2D games as it does with 3D. There's even a (very) simple 2D demo scene included.</p>
+<hr />
 <h2 id="does-dungen-support-loops">Does DunGen support loops?</h2>
-<p>Loops (paths that connect back up to the rest of the dungeon) are not supported. You can achieve incidental loops by using the <code>Doorway Connection Chance</code> feature in the <a href="../../core-concepts/dungeon-flow/#inspector-settings">DungeonFlow</a>. This will try to connect any Doorways that coincidentally overlap, but were otherwise not connected.</p>
+<p>Loops (paths that connect back up to the rest of the dungeon) are <strong>not</strong> supported. There are two ways to get a <em>kind</em> of looping behaviour, but they can't be relied upon if it's important that your dungeon loop back on itself.</p>
+<ol>
+<li>You can achieve incidental loops by using the <code>Doorway Connection Chance</code> feature in the <a href="../../core-concepts/dungeon-flow/#inspector-settings">DungeonFlow</a>. This will try to connect any Doorways that coincidentally overlap, but were otherwise not connected. This method is unreliable and you don't have much control over where or how loops form.</li>
+<li>Small local loops can be formed by making a tile that consists of multiple rooms. This method is more reliable, but since they're made up of a single tile, loops cannot connect two different parts of the dungeon and should be kept relatively small.</li>
+</ol>
+<hr />
 <h2 id="can-i-generate-dungeons-in-the-editor-or-does-dungen-only-support-runtime-dungeons">Can I generate dungeons in the editor, or does DunGen only support runtime dungeons?</h2>
 <p>DunGen can generate dungeon layouts entirely in the editor if you'd like. Just use the window located on the main menu under <code>Window &gt; DunGen &gt; Generate Dungeon</code>.</p>
+<hr />
 <h2 id="can-you-save-a-dungeon-layout-and-come-back-to-it-later">Can you save a dungeon layout and come back to it later?</h2>
 <p>The random number generator used by DunGen is seeded. If you need your players to be able to revisit a previous floor, for example, you would store the seed used to generate that floor. DunGen could then take that seed and generate an identical layout (including props). Of course, you'd need to also save any changes that were made to the dungeon (such as chests being opened) and re-apply them once DunGen has finished generating the layout.</p>
+<hr />
 <h2 id="does-dungen-work-with-outdoor-dungeons-as-well">Does DunGen work with outdoor dungeons as well?</h2>
 <p>While DunGen wasn't made with outdoor scenes in mind, it doesn't care what is contained within a tile. These are a few things you'll have to consider when using DunGen in an outdoor setting:</p>
 <ul>
@@ -1789,8 +1840,13 @@
 <li>You'll need a way to cover any Tile edges that aren't connected. The best way to do this is to have a cliff mesh (or some other large, natural structure) that blocks the edge of the tile. You'd then use a Doorways Blocker list to make this mesh only appear when the Tile is not connected to anything along that edge. See the <a href="../../core-concepts/doorways/">Doorways</a> section for more information.</li>
 <li>Standard portal culling won't provide much benefit (if any) when your doorways stretch the length of your tile. You'll need to make use of some other culling solution.</li>
 </ul>
+<hr />
 <h2 id="will-dungen-work-with-this-art-pack">Will DunGen work with this art pack?</h2>
 <p>There are no strict requirements when it comes to the assets you use with DunGen. Any modular art pack should work without issue (although if you're mixing packs, it's best if all of the art uses the same grid size).</p>
+<hr />
+<h2 id="im-getting-some-errors-after-installing-dungen">I'm getting some errors after installing DunGen</h2>
+<p>If you're updating from a previous version of DunGen, try deleting the old <code>DunGen</code> folder from your <code>Assets</code> directory before importing the new version. This will ensure that any files that have been removed or renamed in the new version are properly cleaned up.</p>
+<p>Whether you're updating or installing for the first time, it's sometimes possible for the package to be corrupted during download or import. Try re-downloading and re-importing the package from the Unity Asset Store.</p>
 
 
 

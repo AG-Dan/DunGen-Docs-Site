@@ -344,6 +344,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#21814-20251220" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.18.14 - [2025/12/20]
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#21813-20251216" class="md-nav__link">
     <span class="md-ellipsis">
       2.18.13 - [2025/12/16]
@@ -2798,6 +2807,8 @@
       
         
       
+        
+      
     
     
     
@@ -3081,6 +3092,29 @@
   
   <span class="md-ellipsis">
     DunGen Character Component
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../advanced-features/generation-pipeline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Generation Pipeline
     
   </span>
   
@@ -3732,6 +3766,15 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#21814-20251220" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.18.14 - [2025/12/20]
+    </span>
+  </a>
   
 </li>
       
@@ -5770,6 +5813,17 @@
 <li>Per-tile by adding a <code>TileBoundsOverride</code> component (or a custom component implementing <code>ITileBoundsCalculator</code>) to the tile prefab</li>
 </ul>
 </li>
+<li>Refactored <code>DungeonGenerator</code> class to improve readability and maintainability<ul>
+<li>Most users should see no change in behaviour, but some advanced users who have extended or overridden parts of the generation process may need to update their code</li>
+<li>The generation process has been split into multiple generation steps and services that can all be optionally extended or overridden by creating custom types derived from the appropriate classes</li>
+<li>Core generation steps, services, and extension steps (custom code that runs <strong>between</strong> steps) can all be configured by creating a new <strong>Generation Pipeline</strong> asset (<code>Create &gt; DunGen &gt; Generation Pipeline</code>) and assigning it either in the <code>DungeonFlow</code> or as an override in the dungeon generation settings</li>
+<li>Custom post-processing steps can be added to the generation pipeline by creating a new type implementing <code>DunGen.PostProcessing.IPostProcessStep</code> and adding a new entry to the list under the post-processing section of the generation pipeline asset. Existing ways of adding custom post-processing steps continue to work, but some signatures have changed and will need to be updated</li>
+</ul>
+</li>
+<li>SECTR portal culling integration now supports interior doorways using the new <code>SECTR Doorway Link</code> component, allowing for per-room culling in tiles made of multiple rooms<ul>
+<li>Attaching a <code>SECTR Doorway Link</code> component to a doorway will allow you to select an interior sector that the door leads to, instead of using the sector of the entire tile.</li>
+</ul>
+</li>
 </ul>
 <h3 id="changed">Changed</h3>
 <ul>
@@ -5790,6 +5844,23 @@
 </ul>
 </li>
 <li>The <code>Tile</code> component now supports multi-object editing</li>
+<li>Refactored dungeon generation analysis<ul>
+<li>Any named metrics can now be added using a hierarchical naming scheme (e.g. 'Tiles.Count.MainPath')</li>
+<li>Median values are now calculated and displayed alongside mean (formerly labelled 'average')</li>
+<li>Now provides additional information such as:<ul>
+<li>Number of branches in the dungeon</li>
+<li>Length of the main path and branch paths</li>
+<li>Number of times each tile prefab was used</li>
+</ul>
+</li>
+<li><code>RuntimeAnalyzer</code> now displays metrics in a grid for better readability</li>
+<li>Analysis has been restructured into modules that can be extended for custom analysis<ul>
+<li>Create a new type that implements <code>IGenerationAnalysisModule</code> and it will automatically be picked up by the analyser</li>
+<li>Use <code>results.AddValue()</code> to add values to the metrics table and <code>results.Messages.Add()</code> to add messages to the report</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 <h3 id="fixed">Fixed</h3>
 <ul>
@@ -5797,11 +5868,16 @@
 <li>Fixed an issue with tile collisions when using a Root GameObject that is not at the origin</li>
 <li>Fixed various transform issues where the dungeon would not correctly respect the position/rotation of its root or attachment point</li>
 <li>Attached dungeons will now automatically avoid collisions with the tile they are attached to</li>
+<li>Fixed an issue causing an incorrect number of global props to be spawned</li>
 </ul>
 <h3 id="removed">Removed</h3>
 <ul>
 <li>Quadtree broad phase for collision detection has been removed. The quadtree implementation wasn't fully supported and the spatial hashing broad phase is more stable, simple, and performs better in almost all cases anyway</li>
 <li>Removed the version of the tile connection rule delegate that was deprecated in 2.16</li>
+</ul>
+<h2 id="21814-20251220">2.18.14 - [2025/12/20]</h2>
+<ul>
+<li>The failure report window now correctly displays the failure reasons for all retries, not just the last one</li>
 </ul>
 <h2 id="21813-20251216">2.18.13 - [2025/12/16]</h2>
 <h3 id="fixed_1">Fixed</h3>

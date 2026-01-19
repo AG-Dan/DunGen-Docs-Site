@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://dungen-docs.aegongames.com/2.19/advanced-features/post-processing/">
+        <link rel="canonical" href="https://dungen-docs.aegongames.com/2.19/advanced-features/generation-pipeline/">
       
       
-        <link rel="prev" href="../runtime-events/">
+        <link rel="prev" href="../character-component/">
       
       
-        <link rel="next" href="../character-component/">
+        <link rel="next" href="../../optimization/">
       
       
       <link rel="icon" href="../../assets/images/favicon.ico">
@@ -22,7 +22,7 @@
     
     
       
-        <title>Custom Post-Processing - DunGen</title>
+        <title>Generation Pipeline - DunGen</title>
       
     
     
@@ -83,7 +83,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#advanced-features-custom-post-processing-steps" class="md-skip">
+        <a href="#advanced-features-generation-pipeline" class="md-skip">
           Skip to content
         </a>
       
@@ -125,7 +125,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Custom Post-Processing
+              Generation Pipeline
             
           </span>
         </div>
@@ -972,32 +972,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Custom Post-Processing
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../post-processing/" class="md-nav__link">
         
   
   
@@ -1008,62 +986,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#method-1-registering-steps-via-code-registerpostprocesshook" class="md-nav__link">
-    <span class="md-ellipsis">
-      Method 1: Registering Steps via Code (RegisterPostProcessHook)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#method-2-creating-custom-adapters-baseadapter" class="md-nav__link">
-    <span class="md-ellipsis">
-      Method 2: Creating Custom Adapters (BaseAdapter)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#method-3-post-process-steps-in-a-custom-generation-pipeline" class="md-nav__link">
-    <span class="md-ellipsis">
-      Method 3: Post-Process Steps in a Custom Generation Pipeline
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#choosing-the-right-method" class="md-nav__link">
-    <span class="md-ellipsis">
-      Choosing the Right Method
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1096,10 +1018,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../generation-pipeline/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Generation Pipeline
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1110,6 +1054,86 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-a-custom-generation-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating a Custom Generation Pipeline
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#anatomy-of-a-generation-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      Anatomy of a Generation Pipeline
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Anatomy of a Generation Pipeline">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#services" class="md-nav__link">
+    <span class="md-ellipsis">
+      Services
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pipeline-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pipeline Steps
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extension-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Extension Steps
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1711,38 +1735,62 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#method-1-registering-steps-via-code-registerpostprocesshook" class="md-nav__link">
+  <a href="#overview" class="md-nav__link">
     <span class="md-ellipsis">
-      Method 1: Registering Steps via Code (RegisterPostProcessHook)
+      Overview
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#method-2-creating-custom-adapters-baseadapter" class="md-nav__link">
+  <a href="#creating-a-custom-generation-pipeline" class="md-nav__link">
     <span class="md-ellipsis">
-      Method 2: Creating Custom Adapters (BaseAdapter)
+      Creating a Custom Generation Pipeline
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#method-3-post-process-steps-in-a-custom-generation-pipeline" class="md-nav__link">
+  <a href="#anatomy-of-a-generation-pipeline" class="md-nav__link">
     <span class="md-ellipsis">
-      Method 3: Post-Process Steps in a Custom Generation Pipeline
+      Anatomy of a Generation Pipeline
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Anatomy of a Generation Pipeline">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#services" class="md-nav__link">
+    <span class="md-ellipsis">
+      Services
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#choosing-the-right-method" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#pipeline-steps" class="md-nav__link">
     <span class="md-ellipsis">
-      Choosing the Right Method
+      Pipeline Steps
     </span>
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extension-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Extension Steps
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1762,166 +1810,177 @@
 
 
 
-<h1 id="advanced-features-custom-post-processing-steps">Advanced Features: Custom Post-Processing Steps</h1>
-<p>DunGen's generation process involves several stages: creating the main path, adding branches, placing props, handling the lock &amp; key system, etc. Sometimes, you need to inject your own custom logic <em>during</em> this process, specifically after the main dungeon layout (<code>Dungeon</code> data structure) exists but before generation is fully marked as complete.</p>
-<p>This is useful for:</p>
-<ul>
-<li>Integrating third-party systems (like pathfinding baking or custom culling setups) that need the final level geometry.</li>
-<li>Running complex analysis or modification routines on the generated <code>Dungeon</code> data.</li>
-<li>Implementing custom prop placement logic that depends on the overall dungeon structure.</li>
-<li>Performing tasks that need to happen <em>after</em> DunGen's built-in post-processing (like lock/key placement) but <em>before</em> the final <code>GenerationStatus.Complete</code> event fires.</li>
-</ul>
-<p>DunGen offers three ways to add your custom post-processing logic:</p>
-<ol>
-<li><strong>Registering Steps via Code:</strong> Use the <code>RegisterPostProcessHook</code> method on the <code>DungeonGenerator</code> for fine-grained control.</li>
-<li><strong>Creating Custom Adapters:</strong> Derive a component from <code>BaseAdapter</code> for a more component-based approach, often used for integrations.</li>
-<li><strong>Post-Process Steps in a Custom Generation Pipeline:</strong> Define custom post-processing steps in a <a href="../generation-pipeline/">Generation Pipeline</a>.</li>
-</ol>
-<p>Post-processing steps registered via code or adapters are executed <strong>first</strong> (in the order defined by their priority, highest first), followed by any post-processing steps defined in a custom generation pipeline (which are executed in the order they appear in the list).</p>
+<h1 id="advanced-features-generation-pipeline">Advanced Features: Generation Pipeline</h1>
+<p>For most users, DunGen's default generation pipeline will be more than sufficient for generating dungeons. However, if you need more control over the generation process, DunGen provides a way to customize the pipeline through scripting.</p>
 <hr />
-<h2 id="method-1-registering-steps-via-code-registerpostprocesshook">Method 1: Registering Steps via Code (<code>RegisterPostProcessHook</code>)</h2>
-<p>This method allows you to dynamically register a C# method to be called during the post-processing phase.</p>
-<p><strong>How it Works:</strong></p>
-<ol>
-<li>Get a reference to your <code>DungeonGenerator</code> instance.</li>
-<li>Call the <code>generator.RegisterPostProcessHook()</code> method, providing your callback method and configuration options.</li>
-<li>DunGen will execute your callback method at the appropriate time during its post-processing phase.</li>
-</ol>
-<p><strong>The Method Signature:</strong></p>
-<div class="language-csharp highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">PostProcessHook</span><span class="w"> </span><span class="nf">RegisterPostProcessHook</span><span class="p">(</span><span class="n">Action</span><span class="o">&lt;</span><span class="n">GenerationContext</span><span class="o">&gt;</span><span class="w"> </span><span class="n">callback</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">priority</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
-</span></code></pre></div>
-<ul>
-<li><strong><code>Action&lt;GenerationContext&gt; callback</code>:</strong> This is your custom method (or lambda expression) that will be executed. It receives the <code>GenerationContext</code> instance as an argument, allowing you to access the current state of the generated dungeon.</li>
-<li><strong><code>int priority</code>:</strong> Determines the execution order. <strong>Higher priority numbers execute first.</strong> Steps with the same priority have an undefined execution order relative to each other.</li>
-<li><strong>Return Value:</strong> The method returns a <code>PostProcessHook</code> object that represents your registered step. You can use this object to unregister the step later if needed.</li>
-</ul>
-<p><strong>Example:</strong></p>
-<div class="language-C# highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">using</span><span class="w"> </span><span class="nn">DunGen</span><span class="p">;</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="k">using</span><span class="w"> </span><span class="nn">DunGen.Generation</span><span class="p">;</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="k">using</span><span class="w"> </span><span class="nn">DunGen.PostProcessing</span><span class="p">;</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="k">using</span><span class="w"> </span><span class="nn">UnityEngine</span><span class="p">;</span>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MyCustomPostProcessor</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">MonoBehaviour</span>
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="p">{</span>
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">    </span><span class="c1">// Assign your Runtime Dungeon component in the inspector</span>
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">RuntimeDungeon</span><span class="w"> </span><span class="n">RuntimeDungeon</span><span class="p">;</span>
-</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>
-</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="n">PostProcessHook</span><span class="w"> </span><span class="n">hook</span><span class="p">;</span>
-</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>
-</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>
-</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Start</span><span class="p">()</span>
-</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">    </span><span class="p">{</span>
-</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">RuntimeDungeon</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">null</span><span class="p">)</span>
-</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">            </span><span class="k">return</span><span class="p">;</span>
-</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>
-</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="w">        </span><span class="c1">// Register our custom method with the default priority and store</span>
-</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="w">        </span><span class="c1">// the returned hook so we can unregister it later</span>
-</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="w">        </span><span class="n">hook</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">RuntimeDungeon</span><span class="p">.</span><span class="n">Generator</span><span class="p">.</span><span class="n">RegisterPostProcessHook</span><span class="p">(</span><span class="n">MyCustomPostProcessLogic</span><span class="p">);</span>
-</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>
-</span><span id="__span-1-24"><a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a><span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnDestroy</span><span class="p">()</span>
-</span><span id="__span-1-25"><a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a><span class="w">    </span><span class="p">{</span>
-</span><span id="__span-1-26"><a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">RuntimeDungeon</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">null</span><span class="p">)</span>
-</span><span id="__span-1-27"><a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a><span class="w">            </span><span class="k">return</span><span class="p">;</span>
-</span><span id="__span-1-28"><a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a>
-</span><span id="__span-1-29"><a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a><span class="w">        </span><span class="c1">// Unregister our custom method</span>
-</span><span id="__span-1-30"><a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a><span class="w">        </span><span class="n">RuntimeDungeon</span><span class="p">.</span><span class="n">Generator</span><span class="p">.</span><span class="n">UnregisterPostProcessHook</span><span class="p">(</span><span class="n">hook</span><span class="p">);</span>
-</span><span id="__span-1-31"><a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-1-32"><a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a>
-</span><span id="__span-1-33"><a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a><span class="w">    </span><span class="c1">// This is the method that gets called by DunGen</span>
-</span><span id="__span-1-34"><a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a><span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">MyCustomPostProcessLogic</span><span class="p">(</span><span class="n">GenerationContext</span><span class="w"> </span><span class="n">context</span><span class="p">)</span>
-</span><span id="__span-1-35"><a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a><span class="w">    </span><span class="p">{</span>
-</span><span id="__span-1-36"><a id="__codelineno-1-36" name="__codelineno-1-36" href="#__codelineno-1-36"></a><span class="w">        </span><span class="n">Debug</span><span class="p">.</span><span class="n">Log</span><span class="p">(</span><span class="s">&quot;Running custom post-process step!&quot;</span><span class="p">);</span>
-</span><span id="__span-1-37"><a id="__codelineno-1-37" name="__codelineno-1-37" href="#__codelineno-1-37"></a>
-</span><span id="__span-1-38"><a id="__codelineno-1-38" name="__codelineno-1-38" href="#__codelineno-1-38"></a><span class="w">        </span><span class="c1">// Access the generated dungeon data</span>
-</span><span id="__span-1-39"><a id="__codelineno-1-39" name="__codelineno-1-39" href="#__codelineno-1-39"></a><span class="w">        </span><span class="n">Dungeon</span><span class="w"> </span><span class="n">dungeon</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">context</span><span class="p">.</span><span class="n">Dungeon</span><span class="p">;</span>
-</span><span id="__span-1-40"><a id="__codelineno-1-40" name="__codelineno-1-40" href="#__codelineno-1-40"></a>
-</span><span id="__span-1-41"><a id="__codelineno-1-41" name="__codelineno-1-41" href="#__codelineno-1-41"></a><span class="w">        </span><span class="c1">// Perform your custom logic here</span>
-</span><span id="__span-1-42"><a id="__codelineno-1-42" name="__codelineno-1-42" href="#__codelineno-1-42"></a><span class="w">        </span><span class="n">Debug</span><span class="p">.</span><span class="n">Log</span><span class="p">(</span><span class="s">$&quot;Dungeon has {dungeon.AllTiles.Count} tiles.&quot;</span><span class="p">);</span>
-</span><span id="__span-1-43"><a id="__codelineno-1-43" name="__codelineno-1-43" href="#__codelineno-1-43"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-1-44"><a id="__codelineno-1-44" name="__codelineno-1-44" href="#__codelineno-1-44"></a><span class="p">}</span>
-</span></code></pre></div>
-<p><strong>Use Cases:</strong> Ideal for simple one-off post-processing tasks defined in specific scripts.</p>
+<h2 id="overview">Overview</h2>
+<p>DunGen's generation pipeline is made up of a series of steps that are executed in order to create the final dungeon layout. The core pipeline steps are in a fixed order, and you can derive custom types from the base pipeline steps to extend or override their functionality.</p>
+<p>Extension steps provide a way to insert custom behaviour before or after an existing step, allowing you to augment the generation process with your own logic without having to override one of the core steps.</p>
+<p>Additionally, a generation pipeline contains a list of services that are made available to all pipeline steps. These services provide shared functionality that can be used throughout the generation process to perform tasks such as finding potential doorway pairs and handling collisions.</p>
 <hr />
-<h2 id="method-2-creating-custom-adapters-baseadapter">Method 2: Creating Custom Adapters (<code>BaseAdapter</code>)</h2>
-<p>This approach is more component-oriented and is the standard way DunGen integrates systems like Pathfinding and Culling. You create a new script that inherits from <code>DunGen.Adapters.BaseAdapter</code>.</p>
-<p><strong>How it Works:</strong></p>
+<h2 id="creating-a-custom-generation-pipeline">Creating a Custom Generation Pipeline</h2>
+<p>A custom pipeline can be created in the project tab (<code>Create &gt; DunGen &gt; Generation Pipeline</code>). This will create a new asset that you can configure in the inspector.</p>
+<p>There are two ways to apply your custom pipeline:</p>
 <ol>
-<li>Create a new C# script.</li>
-<li>Make it inherit from <code>DunGen.Adapters.BaseAdapter</code>.</li>
-<li>Override the abstract <code>Run(GenerationContext context)</code> method. This is where your custom logic goes.</li>
-<li>Attach this new component script to the <strong>same GameObject</strong> that has the <code>RuntimeDungeon</code> component.</li>
-<li>DunGen will automatically find all <code>BaseAdapter</code> components on that GameObject and execute their <code>Run</code> methods during the post-processing phase.</li>
+<li>Assign it to a <code>DungeonFlow</code> asset by setting the <code>Custom Pipeline</code> field in the inspector.</li>
+<li>Assign it directly to the dungeon generation settings (such as on the <code>RuntimeDungeon</code> component and the <code>Generate Dungeon</code> menu window) by setting the <code>Pipeline Override</code> field in the advanced section of the inspector.</li>
 </ol>
-<p><strong>Adapter Properties:</strong></p>
-<ul>
-<li><strong><code>Priority</code> (Inspector Field):</strong> Inherited from <code>BaseAdapter</code>. This integer value controls the execution order of all post-processing steps within the same phase. <strong>Higher priority adapters run first.</strong></li>
-</ul>
-<p><strong>Example:</strong></p>
-<div class="language-C# highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">using</span><span class="w"> </span><span class="nn">DunGen.Adapters</span><span class="p">;</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="k">using</span><span class="w"> </span><span class="nn">DunGen.Generation</span><span class="p">;</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="k">using</span><span class="w"> </span><span class="nn">UnityEngine</span><span class="p">;</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MyCustomAdapter</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">BaseAdapter</span>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="p">{</span>
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">    </span><span class="k">protected</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Run</span><span class="p">(</span><span class="n">GenerationContext</span><span class="w"> </span><span class="n">context</span><span class="p">)</span>
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">    </span><span class="p">{</span>
-</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">        </span><span class="n">Debug</span><span class="p">.</span><span class="n">Log</span><span class="p">(</span><span class="s">$&quot;There are {context.Dungeon.AllTiles.Count} tiles in the dungeon&quot;</span><span class="p">);</span>
-</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="p">}</span>
-</span></code></pre></div>
-<p><strong>Use Cases:</strong> Excellent for creating reusable integration components (like the built-in pathfinding/culling adapters), especially when the logic might need configuration via Inspector fields on the component itself. Easier to manage as self-contained units.</p>
+<p>Once assigned, DunGen will use your custom pipeline instead of the default one when generating dungeons.</p>
 <hr />
-<h2 id="method-3-post-process-steps-in-a-custom-generation-pipeline">Method 3: Post-Process Steps in a Custom Generation Pipeline</h2>
-<p>For projects that use a custom <a href="../generation-pipeline/">Generation Pipeline</a>, a custom post-process step can be added to the pipeline by creating a new class that implements the <code>IPostProcessStep</code> interface.</p>
-<p><strong>Example:</strong></p>
-<div class="language-C# highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">using</span><span class="w"> </span><span class="nn">DunGen.Generation</span><span class="p">;</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="k">using</span><span class="w"> </span><span class="nn">DunGen.PostProcessing</span><span class="p">;</span>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="k">using</span><span class="w"> </span><span class="nn">System.Collections</span><span class="p">;</span>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="k">using</span><span class="w"> </span><span class="nn">UnityEngine</span><span class="p">;</span>
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>
-</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">MyCustomPostProcessStep</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">IPostProcessStep</span>
-</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="p">{</span>
-</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">DisplayName</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="s">&quot;Print Room Count&quot;</span><span class="p">;</span>
-</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>
-</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>
-</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">IEnumerator</span><span class="w"> </span><span class="nf">Execute</span><span class="p">(</span><span class="n">GenerationContext</span><span class="w"> </span><span class="n">context</span><span class="p">)</span>
-</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">    </span><span class="p">{</span>
-</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">        </span><span class="n">Debug</span><span class="p">.</span><span class="n">Log</span><span class="p">(</span><span class="s">$&quot;Dungeon has {context.Dungeon.AllTiles.Count} rooms.&quot;</span><span class="p">);</span>
-</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>
-</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="w">        </span><span class="c1">// Since this is a simple synchronous operation, we need to yield break to satisfy the IEnumerator return type</span>
-</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="w">        </span><span class="k">yield</span><span class="w"> </span><span class="k">break</span><span class="p">;</span>
-</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="p">}</span>
-</span></code></pre></div>
-<p>This new class will then appear in the dropdown when configuring the <code>Post-Processing</code> step in your custom generation pipeline asset.</p>
+<h2 id="anatomy-of-a-generation-pipeline">Anatomy of a Generation Pipeline</h2>
+<h3 id="services">Services</h3>
+<p>Services are shared components that provide functionality to the various pipeline steps. They are passed in directly from the pipeline asset at the start of the generation process and remain available until the process is complete.</p>
+<p>Creating a custom service involves making a new C# class that implements a specific interface (see table below). Once created, you will be able to select your custom service from the dropdown in the pipeline asset inspector.</p>
 <figure>
-<p><a class="glightbox" href="../../assets/images/advanced-features/pipeline-postprocess-step.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Custom Post-Process Step in Pipeline" src="../../assets/images/advanced-features/pipeline-postprocess-step.png" /></a></p>
+<p><a class="glightbox" href="../../assets/images/advanced-features/pipeline-services.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Generation Pipeline Services" src="../../assets/images/advanced-features/pipeline-services.png" /></a></p>
 <figcaption></figcaption>
 </figure>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Service Name</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Interface</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Tile Placer</td>
+<td style="text-align: left;">Places <code>TileProxy</code> instances in the <code>DungeonProxy</code>.</td>
+<td style="text-align: left;"><code>ITilePlacer</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">Tile Proxy Pool</td>
+<td style="text-align: left;">Manages a pool of <code>TileProxy</code> instances for use during generation.</td>
+<td style="text-align: left;"><code>ITileProxyPool</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">Doorway Pair Finder</td>
+<td style="text-align: left;">Finds potential pairs of doorways between tiles for connections.</td>
+<td style="text-align: left;"><code>IDoorwayPairFinder</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">Collision Service</td>
+<td style="text-align: left;">Handles collision detection between tiles during placement.</td>
+<td style="text-align: left;"><code>IDungeonCollisionService</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">Tile Template Provider</td>
+<td style="text-align: left;">Given a reference to a tile prefab, returns a <code>TileProxy</code> template.</td>
+<td style="text-align: left;"><code>ITileTemplateProvider</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">Yield Policy</td>
+<td style="text-align: left;">Manages yielding during generation to avoid blocking the main thread.</td>
+<td style="text-align: left;"><code>IYieldPolicy</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">Dungeon Builder</td>
+<td style="text-align: left;">Constructs the final dungeon from the <code>DungeonProxy</code>, turning proxy instances into actual game objects.</td>
+<td style="text-align: left;"><code>IDungeonBuilder</code></td>
+</tr>
+</tbody>
+</table>
 <hr />
-<h2 id="choosing-the-right-method">Choosing the Right Method</h2>
+<h3 id="pipeline-steps">Pipeline Steps</h3>
+<p>Pipeline steps are the individual stages of the generation process. Each step performs a specific task, such as placing tiles along the main path, or instantiating the final dungeon game objects.</p>
+<p>Individual steps can be customised by deriving from the base step classes (see table below). Your custom type will then appear in the dropdown menu when selecting a step in the pipeline asset inspector. Any serialized fields on your custom step will be exposed in the inspector for configuration.</p>
+<figure>
+<p><a class="glightbox" href="../../assets/images/advanced-features/pipeline-steps.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Generation Steps" src="../../assets/images/advanced-features/pipeline-steps.png" /></a></p>
+<figcaption>
+<p>Core pipeline steps. Each step can have optional properties, which are exposed in the inspector.</p>
+</figcaption>
+</figure>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Step Name</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Base Class</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Tile Injection</td>
+<td style="text-align: left;">Stores information about injected tiles into the generation context before generation begins.</td>
+<td style="text-align: left;"><code>TileInjectionStep</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">Pre-Processing</td>
+<td style="text-align: left;">Performs any necessary preprocessing on the generation context before tile placement begins.</td>
+<td style="text-align: left;"><code>PreProcessingStep</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">Main Path</td>
+<td style="text-align: left;">Builds the main path of the dungeon according to the flow definition.</td>
+<td style="text-align: left;"><code>MainPathStep</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">Branching</td>
+<td style="text-align: left;">Adds branching paths to the dungeon off the main path.</td>
+<td style="text-align: left;"><code>BranchingStep</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">Branch Pruning</td>
+<td style="text-align: left;">Trims invalid tiles from the ends of branches to meet requirements.</td>
+<td style="text-align: left;"><code>BranchPruningStep</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">Validate Required Tiles</td>
+<td style="text-align: left;">Ensures that all required tiles (e.g. injected tiles) are present in the dungeon.</td>
+<td style="text-align: left;"><code>ValidateRequiredTilesStep</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">Finalise Layout</td>
+<td style="text-align: left;">Finalises the dungeon layout, making any last adjustments before building.</td>
+<td style="text-align: left;"><code>FinaliseLayoutStep</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">Instantiate Tiles</td>
+<td style="text-align: left;">Instantiates the actual tile game objects in the scene based on the finalised layout.</td>
+<td style="text-align: left;"><code>InstantiateTilesStep</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">Process Props</td>
+<td style="text-align: left;">Processes and places props within the instantiated tiles.</td>
+<td style="text-align: left;"><code>ProcessPropsStep</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">Lock &amp; Key Placement</td>
+<td style="text-align: left;">Places locks and keys within the dungeon according to the flow definition.</td>
+<td style="text-align: left;"><code>LockAndKeyPlacementStep</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">Post-Processing</td>
+<td style="text-align: left;">Performs any necessary post-processing on the dungeon after instantiation.</td>
+<td style="text-align: left;"><code>PostProcessingStep</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="extension-steps">Extension Steps</h3>
+<p>Extension steps allow you to insert custom logic before or after an existing pipeline step. This is useful for augmenting the generation process without having to override any of the steps.</p>
+<figure>
+<p><a class="glightbox" href="../../assets/images/advanced-features/pipeline-extension-steps.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Extension Steps" src="../../assets/images/advanced-features/pipeline-extension-steps.png" /></a></p>
+<figcaption>
+<p>Extension pipeline step with custom properties.</p>
+</figcaption>
+</figure>
+<p>To create an extension step, derive a new class from <code>CustomGenerationStep</code>. Your custom type will then appear in the dropdown menu when adding an extension step in the pipeline asset inspector. The checkbox can be used to disable the step without removing it.</p>
 <ul>
-<li><strong><code>RegisterPostProcessStep</code>:</strong><ul>
-<li>Use when the logic is part of a script that isn't naturally attached to the <code>RuntimeDungeon</code> GameObject.</li>
-<li>Use when you need to dynamically add/remove steps based on runtime conditions.</li>
-<li>Best for simple, one-off post-processing tasks.</li>
+<li><strong>Anchor:</strong> Specified how this extension step is anchored to an existing core step (e.g. <code>Before All</code>, <code>After Main Path</code>).</li>
+<li><strong>Order:</strong> Specifies the order in which this extension step is executed relative to other extension steps anchored to the same core step. Lower values are executed first.</li>
+<li><strong>Step:</strong> The actual custom step to execute. Any serialized fields on your custom step will be exposed in the inspector for configuration.</li>
 </ul>
-</li>
-<li><strong><code>BaseAdapter</code>:</strong><ul>
-<li>Use for creating self-contained, reusable integration components (preferred for integrations like pathfinding, culling, etc.).</li>
-<li>Use when you want to configure the step via the Inspector (add public fields to your adapter).</li>
-<li>Generally simpler setup.</li>
-</ul>
-</li>
-<li><strong><code>IPostProcessStep</code> in a Custom Generation Pipeline:</strong><ul>
-<li>Use when you already have a custom generation pipeline and want to keep all generation logic centralized.</li>
-<li>Use when you want to share the same post-processing step across multiple dungeons by reusing the pipeline asset.</li>
-<li>Best for complex generation workflows.</li>
-</ul>
-</li>
-</ul>
-<p>Custom post-processing provides a vital hook for tailoring the generated dungeon and integrating it fully with your game systems.</p>
+<p>Extension step names will appear in cyan in the pipeline step list to indicate at what point in the pipeline they are executed.</p>
+<figure>
+<p><a class="glightbox" href="../../assets/images/advanced-features/pipeline-extension-step-order.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Extension Step Order" src="../../assets/images/advanced-features/pipeline-extension-step-order.png" /></a></p>
+<figcaption>
+<p>Custom extension step running <code>After Main Path</code>.</p>
+</figcaption>
+</figure>
+<hr />
+<p>Custom generation pipelines are a powerful way to tailor DunGen's dungeon generation process to your specific needs. By creating custom steps and services, you can implement unique generation logic while still leveraging the core functionality provided by DunGen.</p>
 
 
 
@@ -1959,7 +2018,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../runtime-events/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Runtime Events &amp; Code Execution">
+          <a href="../character-component/" class="md-footer__link md-footer__link--prev" aria-label="Previous: DunGen Character Component">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1969,20 +2028,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Runtime Events & Code Execution
+                DunGen Character Component
               </div>
             </div>
           </a>
         
         
           
-          <a href="../character-component/" class="md-footer__link md-footer__link--next" aria-label="Next: DunGen Character Component">
+          <a href="../../optimization/" class="md-footer__link md-footer__link--next" aria-label="Next: Overview">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                DunGen Character Component
+                Overview
               </div>
             </div>
             <div class="md-footer__button md-icon">

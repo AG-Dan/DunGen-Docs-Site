@@ -717,6 +717,8 @@
       
         
       
+        
+      
     
     
     
@@ -1000,6 +1002,29 @@
   
   <span class="md-ellipsis">
     DunGen Character Component
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced-features/generation-pipeline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Generation Pipeline
     
   </span>
   
@@ -1422,6 +1447,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#internal-doorways" class="md-nav__link">
+    <span class="md-ellipsis">
+      Internal Doorways
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1739,6 +1773,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#internal-doorways" class="md-nav__link">
+    <span class="md-ellipsis">
+      Internal Doorways
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1811,6 +1854,16 @@
 <li>This script <strong>must</strong> correctly set the <code>Door</code> component's <code>IsOpen</code> property to <code>true</code> when the door is open and <code>false</code> when it's closed.</li>
 </ol>
 <p>The DunGen integration automatically configures the generated <code>SECTR Portal</code> components to check the <code>IsOpen</code> status of the associated <code>Door</code> component. When <code>IsOpen</code> is <code>false</code>, the portal will be closed, and SECTR VIS will cull the Sector behind it. When <code>true</code>, the portal opens, allowing SECTR VIS to potentially render the Sector beyond.</p>
+<h2 id="internal-doorways">Internal Doorways</h2>
+<p>Some tiles may feature internal doorways that do not connect to other tiles but still need to be considered for culling. For example, you may have a tile that is made up of multiple rooms separated by doorways.</p>
+<p>The default behaviour of the SECTR VIS integration is to create one large sector for the entire tile, ignoring these internal doorways.</p>
+<p>To allow for internal tile culling, we'll need to handle sectors differently.</p>
+<ol>
+<li>Create a new <code>SECTR Sector</code> for each room inside the tile and make sure the bounds encompass only that room. The easiest way to do this is to parent the entire room under an empty GameObject and attach the <code>SECTR Sector</code> component to that GameObject.</li>
+<li>Internal doorways should have <code>SECTR Portal</code> components connecting the internal sectors. Internal doorways should <strong>NOT</strong> have a DunGen <code>Doorway</code> component, as they do not connect to other tiles.</li>
+<li>For external doorways that connect to other tiles, attach a <code>SECTR Doorway Link</code> (<code>DunGen &gt; Culling &gt; SECTR Doorway Link</code>) component to the doorway GameObject. This component has a single property, <code>Sector</code>, which should be assigned the <code>SECTR Sector</code> of the room inside the tile that contains the doorway.</li>
+<li>Now, when DunGen links tiles together, it will use the <code>SECTR Doorway Link</code> (if one exists) to determine which sector to connect the portal to, rather than using the entire tile's sector.</li>
+</ol>
 <hr />
 <p>Using the SECTR VIS integration is an effective way to boost rendering performance in your DunGen-powered levels, especially in complex interior environments.</p>
 
