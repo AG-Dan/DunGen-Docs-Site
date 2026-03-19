@@ -5917,9 +5917,10 @@
 </ul>
 </li>
 <li>SECTR portal culling integration now supports interior doorways using the new <code>SECTR Doorway Link</code> component, allowing for per-room culling in tiles made of multiple rooms<ul>
-<li>Attaching a <code>SECTR Doorway Link</code> component to a doorway will allow you to select an interior sector that the door leads to, instead of using the sector of the entire tile.</li>
+<li>Attaching a <code>SECTR Doorway Link</code> component to a doorway will allow you to select an interior sector that the door leads to, instead of using the sector of the entire tile</li>
 </ul>
 </li>
+<li>Custom tile connection rules can now optionally modify connection weights in addition to (or instead of) just allowing or disallowing connections. Use the new <code>AdjustConnectionWeight</code> delegate in the <code>TileConnectionRule</code> class</li>
 </ul>
 <h3 id="changed">Changed</h3>
 <ul>
