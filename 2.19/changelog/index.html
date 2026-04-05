@@ -2857,6 +2857,8 @@
       
         
       
+        
+      
     
     
     
@@ -3025,6 +3027,29 @@
   
   <span class="md-ellipsis">
     Tile Connection Rules
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../advanced-features/adjust-candidate-tiles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Adjust Candidate Tiles
     
   </span>
   
@@ -5921,6 +5946,7 @@
 </ul>
 </li>
 <li>Custom tile connection rules can now optionally modify connection weights in addition to (or instead of) just allowing or disallowing connections. Use the new <code>AdjustConnectionWeight</code> delegate in the <code>TileConnectionRule</code> class</li>
+<li>The set of candidate tiles for a given doorway can now be mutated before the tile is selected. Candidate tiles can be added/removed, and have their weights altered. Use the new static <code>CandidateTileRules</code> list in <code>DoorwayPairFinder</code>, or implement a custom <code>ICandidateTileBuilder</code> service and assign it in the custom generation pipeline asset</li>
 </ul>
 <h3 id="changed">Changed</h3>
 <ul>
@@ -5958,6 +5984,7 @@
 </li>
 </ul>
 </li>
+<li>Improved tile candidate selection. Candidate tiles are now sampled probabilistically by weight instead of always favouring the highest-weight entries, so small weight differences no longer cause disproportionate bias.</li>
 </ul>
 <h3 id="fixed">Fixed</h3>
 <ul>

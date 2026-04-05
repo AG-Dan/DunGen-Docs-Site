@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://dungen-docs.aegongames.com/2.19/pathfinding/unity-navmesh/">
+        <link rel="canonical" href="https://dungen-docs.aegongames.com/2.19/advanced-features/adjust-candidate-tiles/">
       
       
-        <link rel="prev" href="../">
+        <link rel="prev" href="../connection-rules/">
       
       
-        <link rel="next" href="../astar-pathfinding/">
+        <link rel="next" href="../attached-dungeons/">
       
       
       <link rel="icon" href="../../assets/images/favicon.ico">
@@ -22,7 +22,7 @@
     
     
       
-        <title>Unity NavMesh Components - DunGen</title>
+        <title>Adjust Candidate Tiles - DunGen</title>
       
     
     
@@ -83,7 +83,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#pathfinding-unity-navmesh-components" class="md-skip">
+        <a href="#advanced-features-adjust-candidate-tiles" class="md-skip">
           Skip to content
         </a>
       
@@ -125,7 +125,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Unity NavMesh Components
+              Adjust Candidate Tiles
             
           </span>
         </div>
@@ -686,6 +686,8 @@
       
   
   
+    
+  
   
   
     
@@ -725,15 +727,15 @@
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../advanced-features/" class="md-nav__link ">
+            <a href="../" class="md-nav__link ">
               
   
   
@@ -752,7 +754,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             Advanced Features
@@ -768,7 +770,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advanced-features/props-variety/" class="md-nav__link">
+      <a href="../props-variety/" class="md-nav__link">
         
   
   
@@ -791,7 +793,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advanced-features/doors/" class="md-nav__link">
+      <a href="../doors/" class="md-nav__link">
         
   
   
@@ -814,7 +816,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advanced-features/multiple-floors/" class="md-nav__link">
+      <a href="../multiple-floors/" class="md-nav__link">
         
   
   
@@ -837,7 +839,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advanced-features/lock-key-system/" class="md-nav__link">
+      <a href="../lock-key-system/" class="md-nav__link">
         
   
   
@@ -860,7 +862,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advanced-features/injecting-tiles/" class="md-nav__link">
+      <a href="../injecting-tiles/" class="md-nav__link">
         
   
   
@@ -883,7 +885,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advanced-features/connection-rules/" class="md-nav__link">
+      <a href="../connection-rules/" class="md-nav__link">
         
   
   
@@ -903,10 +905,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../advanced-features/adjust-candidate-tiles/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Adjust Candidate Tiles
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -917,6 +941,44 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#option-1-candidate-tile-rule" class="md-nav__link">
+    <span class="md-ellipsis">
+      Option 1: Candidate Tile Rule
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#option-2-custom-generation-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      Option 2: Custom Generation Pipeline
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -929,7 +991,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advanced-features/attached-dungeons/" class="md-nav__link">
+      <a href="../attached-dungeons/" class="md-nav__link">
         
   
   
@@ -952,7 +1014,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advanced-features/additional-collisions/" class="md-nav__link">
+      <a href="../additional-collisions/" class="md-nav__link">
         
   
   
@@ -975,7 +1037,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advanced-features/runtime-events/" class="md-nav__link">
+      <a href="../runtime-events/" class="md-nav__link">
         
   
   
@@ -998,7 +1060,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advanced-features/post-processing/" class="md-nav__link">
+      <a href="../post-processing/" class="md-nav__link">
         
   
   
@@ -1021,7 +1083,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advanced-features/character-component/" class="md-nav__link">
+      <a href="../character-component/" class="md-nav__link">
         
   
   
@@ -1044,7 +1106,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advanced-features/generation-pipeline/" class="md-nav__link">
+      <a href="../generation-pipeline/" class="md-nav__link">
         
   
   
@@ -1181,8 +1243,6 @@
       
   
   
-    
-  
   
   
     
@@ -1202,15 +1262,15 @@
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../" class="md-nav__link ">
+            <a href="../../pathfinding/" class="md-nav__link ">
               
   
   
@@ -1229,7 +1289,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             Pathfinding
@@ -1242,32 +1302,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Unity NavMesh Components
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../pathfinding/unity-navmesh/" class="md-nav__link">
         
   
   
@@ -1278,71 +1316,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#prerequisites" class="md-nav__link">
-    <span class="md-ellipsis">
-      Prerequisites
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#setup" class="md-nav__link">
-    <span class="md-ellipsis">
-      Setup
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#adapter-component-settings" class="md-nav__link">
-    <span class="md-ellipsis">
-      Adapter Component Settings
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#handling-doors" class="md-nav__link">
-    <span class="md-ellipsis">
-      Handling Doors
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2d-navmesh-integration" class="md-nav__link">
-    <span class="md-ellipsis">
-      2D NavMesh Integration
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1355,7 +1328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../astar-pathfinding/" class="md-nav__link">
+      <a href="../../pathfinding/astar-pathfinding/" class="md-nav__link">
         
   
   
@@ -1378,7 +1351,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../custom-adapters/" class="md-nav__link">
+      <a href="../../pathfinding/custom-adapters/" class="md-nav__link">
         
   
   
@@ -1745,45 +1718,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#prerequisites" class="md-nav__link">
+  <a href="#option-1-candidate-tile-rule" class="md-nav__link">
     <span class="md-ellipsis">
-      Prerequisites
+      Option 1: Candidate Tile Rule
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#setup" class="md-nav__link">
+  <a href="#option-2-custom-generation-pipeline" class="md-nav__link">
     <span class="md-ellipsis">
-      Setup
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#adapter-component-settings" class="md-nav__link">
-    <span class="md-ellipsis">
-      Adapter Component Settings
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#handling-doors" class="md-nav__link">
-    <span class="md-ellipsis">
-      Handling Doors
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2d-navmesh-integration" class="md-nav__link">
-    <span class="md-ellipsis">
-      2D NavMesh Integration
+      Option 2: Custom Generation Pipeline
     </span>
   </a>
   
@@ -1805,132 +1751,55 @@
 
 
 
-<h1 id="pathfinding-unity-navmesh-components">Pathfinding: Unity NavMesh Components</h1>
-<p>DunGen offers built-in integration with Unity's modern, component-based <strong>NavMesh Components</strong> system (package <code>com.unity.ai.navigation</code>). This allows you to automatically generate or utilize NavMesh data for your procedurally generated dungeons at runtime, enabling AI navigation.</p>
+<h1 id="advanced-features-adjust-candidate-tiles">Advanced Features: Adjust Candidate Tiles</h1>
+<p>When DunGen is looking to spawn a new tile, it will first create a list of candidates pulled from the tile sets and archetypes assigned to the current section of the dungeon flow. Each candidate has a weight that is used to determine the likelihood of it being selected, relative to the other candidates.</p>
+<p>In some cases, you may want to adjust this set of candidate tiles. Using custom code, candidates can be added/removed and have their weights adjusted to increase/decrease the likelihood of being selected. This can be done in one of two ways:</p>
+<hr />
+<h2 id="option-1-candidate-tile-rule">Option 1: Candidate Tile Rule</h2>
+<p>A custom rule can be added at runtime to <code>DoorwayPairFinder.CandidateTileRules</code>. Here's an example of a rule that increases the weight of any candidate tile with "Corridor" in its name by a factor of 10:</p>
+<div class="language-csharp highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">using</span><span class="w"> </span><span class="nn">DunGen</span><span class="p">;</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="k">using</span><span class="w"> </span><span class="nn">DunGen.TilePlacement</span><span class="p">;</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="k">using</span><span class="w"> </span><span class="nn">System.Collections.Generic</span><span class="p">;</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="k">using</span><span class="w"> </span><span class="nn">UnityEngine</span><span class="p">;</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">AdjustCandidateWeightsByName</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">MonoBehaviour</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="p">{</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">NameFragment</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Corridor&quot;</span><span class="p">;</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">WeightMultiplier</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10f</span><span class="p">;</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="n">CandidateTileRule</span><span class="w"> </span><span class="n">rule</span><span class="p">;</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnEnable</span><span class="p">()</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">        </span><span class="n">rule</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CandidateTileRule</span><span class="p">(</span><span class="n">MutateCandidateTiles</span><span class="p">);</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">        </span><span class="n">DoorwayPairFinder</span><span class="p">.</span><span class="n">CandidateTileRules</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">rule</span><span class="p">);</span>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnDisable</span><span class="p">()</span>
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="w">        </span><span class="n">DoorwayPairFinder</span><span class="p">.</span><span class="n">CandidateTileRules</span><span class="p">.</span><span class="n">Remove</span><span class="p">(</span><span class="n">rule</span><span class="p">);</span>
+</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="w">        </span><span class="n">rule</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">null</span><span class="p">;</span>
+</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>
+</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">MutateCandidateTiles</span><span class="p">(</span><span class="n">PairingRequest</span><span class="w"> </span><span class="n">request</span><span class="p">,</span><span class="w"> </span><span class="k">ref</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">CandidateTile</span><span class="o">&gt;</span><span class="w"> </span><span class="n">candidates</span><span class="p">)</span>
+</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="w">    </span><span class="p">{</span>
+</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="w">        </span><span class="k">foreach</span><span class="w"> </span><span class="p">(</span><span class="kt">var</span><span class="w"> </span><span class="n">candidate</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">candidates</span><span class="p">)</span>
+</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="w">        </span><span class="p">{</span>
+</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">candidate</span><span class="p">.</span><span class="n">TilePrefab</span><span class="p">.</span><span class="n">name</span><span class="p">.</span><span class="n">Contains</span><span class="p">(</span><span class="n">NameFragment</span><span class="p">))</span>
+</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a><span class="w">                </span><span class="n">candidate</span><span class="p">.</span><span class="n">Weight</span><span class="w"> </span><span class="o">*=</span><span class="w"> </span><span class="n">WeightMultiplier</span><span class="p">;</span>
+</span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-34"><a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a><span class="p">}</span>
+</span></code></pre></div>
 <div class="admonition warning">
-<p class="admonition-title">Separate Package Required</p>
-<p>Unity's NavMesh Components system is <strong>not</strong> included with the Unity Editor by default (as of writing). You must install it via the Unity Package Manager (<code>Window &gt; Package Management &gt; Package Manager</code>). Search for <code>AI Navigation</code> or add it by name: <code>com.unity.ai.navigation</code>.</p>
+<p class="admonition-title">Warning</p>
+<p>The <code>candidates</code> list is pooled and should not be stored or modified outside of the scope of the <code>MutateCandidateTiles</code> method.</p>
 </div>
 <hr />
-<h2 id="prerequisites">Prerequisites</h2>
-<p>Install the <strong>NavMesh Components</strong> package (<code>com.unity.ai.navigation</code>) into your Unity project using the Package Manager.</p>
-<hr />
-<h2 id="setup">Setup</h2>
-<ol>
-<li>Locate the GameObject in your scene that has the <strong><code>Runtime Dungeon</code></strong> component attached.</li>
-<li>Add the <strong><code>Unity Nav Mesh Adapter</code></strong> component to this <strong>same</strong> GameObject (<code>Add Component &gt; DunGen &gt; NavMesh &gt; Unity NavMesh Adapter</code>).</li>
-</ol>
-<p>This adapter will automatically run during DunGen's <a href="../../advanced-features/post-processing/">post-processing phase</a> after the dungeon layout is generated.</p>
-<hr />
-<h2 id="adapter-component-settings">Adapter Component Settings</h2>
-<p>The <code>Unity Nav Mesh Adapter</code> component has several settings to control how NavMesh generation occurs:</p>
-<ul>
-<li>
-<p><strong><code>Priority</code>:</strong> Determines the order in which multiple DunGen adapters are run. Lower numbers run first. Usually, the default value is fine unless you have complex inter-adapter dependencies.</p>
-</li>
-<li>
-<p><strong><code>Runtime Bake Mode</code>:</strong> This crucial setting defines <em>how</em> the NavMesh data is generated or handled at runtime:</p>
-<ul>
-<li><strong><code>Pre-Baked Only</code>:</strong><ul>
-<li><strong>Requires:</strong> You must add a <code>NavMeshSurface</code> component to <em>each</em> of your Tile prefabs and bake them individually in the Editor beforehand.</li>
-<li><strong>Functionality:</strong> DunGen will <strong>not</strong> generate any new NavMesh data at runtime. It assumes the necessary data already exists on the tiles. This is the most performant runtime option as no baking occurs. Use <code>Link Rooms</code> (see below) to connect these separate surfaces.</li>
-</ul>
-</li>
-<li><strong><code>Add If No Surface Exists</code>:</strong><ul>
-<li><strong>Functionality:</strong> If a placed Tile prefab <em>doesn't</em> already have a <code>NavMeshSurface</code>, the adapter will add one and bake it at runtime. Tiles that <em>do</em> have a pre-baked surface are left untouched.</li>
-<li><strong>Use Case:</strong> Useful if you want to pre-bake complex tiles but have simpler tiles baked dynamically.</li>
-</ul>
-</li>
-<li><strong><code>Always Re-bake</code>:</strong><ul>
-<li><strong>Functionality:</strong> Ignores any existing <code>NavMeshSurface</code> components on Tile prefabs. Adds a new <code>NavMeshSurface</code> to <em>every</em> placed Tile instance that doesn't already have, and bakes <em>every</em> Tile's surface at runtime.</li>
-</ul>
-</li>
-<li><strong><code>Full Dungeon Bake</code>:</strong><ul>
-<li><strong>Functionality:</strong> Ignores any NavMesh data on individual tiles. After the <em>entire</em> dungeon layout is generated, it adds a <em>single</em>, large <code>NavMeshSurface</code> component encompassing the whole dungeon and performs one bake operation.</li>
-<li><strong>Pros:</strong> Can result in a more seamless NavMesh, especially for complex layouts or large open areas within the dungeon. Simpler setup as you don't need surfaces on prefabs.</li>
-<li><strong>Cons:</strong> Can be significantly slower than other modes, especially for large dungeons, as the entire bake happens at once.</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<p><strong><code>Link Rooms</code>:</strong></p>
-<ul>
-<li><strong>Functionality:</strong> If checked, DunGen will automatically place <code>NavMeshLink</code> components across connected doorways between adjacent Tiles.</li>
-<li><strong>Purpose:</strong> This is essential when using pre-baked NavMeshes (<code>Pre-Baked Only</code> mode) or tile-by-tile baking (<code>Add If No Surface Exists</code>, <code>Always Re-bake</code>) as it allows AI agents to pathfind <em>between</em> the separate NavMesh surfaces of each tile.</li>
-<li><strong>Ignored:</strong> This setting has no effect in <code>Full Dungeon Bake</code> mode, as there's only one continuous surface.</li>
-</ul>
-</li>
-<li>
-<p><strong><code>Auto-Calculate Link Points</code>:</strong></p>
-<ul>
-<li>If checked, DunGen will attempt to automatically calculate the start and end points of the link between rooms. If unchecked, the start and end points of the link will be a fixed distance from the doorway (see below).</li>
-</ul>
-</li>
-<li>
-<p><strong><code>Distance from Doorway</code>:</strong></p>
-<ul>
-<li>Controls how far from the center of the doorway (on either side) the generated <code>NavMeshLink</code> starts and ends. Adjust this based on your agent size and doorway geometry. Only relevant if <code>Link Rooms</code> is checked.</li>
-</ul>
-</li>
-<li>
-<p><strong><code>Agent Types Link Info</code>:</strong></p>
-<ul>
-<li>Allows you to configure <code>NavMeshLink</code> generation settings on a per-agent-type basis (Agent Types are defined in Unity's Navigation settings). Add entries to this list to customize link generation.</li>
-<li><strong><code>Agent Type</code>:</strong> The specific agent type this link configuration applies to.</li>
-<li><strong><code>Area</code>:</strong> The NavMesh Area type assigned to the generated link (e.g., "Walkable", "Jump"). This allows different agents to treat traversals differently.</li>
-<li>Only relevant if <code>Link Rooms</code> is checked.</li>
-</ul>
-</li>
-<li>
-<p><strong><code>Disable When Door is Closed</code>:</strong></p>
-<ul>
-<li><strong>Functionality:</strong> If checked, the generated <code>NavMeshLink</code>'s enabled state will be controlled by the <code>IsOpen</code> property of the <a href="../../advanced-features/doors/">Door Component</a> found on any door prefab placed in the doorway.</li>
-<li><strong>Requires:</strong> Your door prefabs must have a script that correctly updates the <code>Door</code> component's <code>IsOpen</code> status when the door opens or closes.</li>
-<li><strong>Purpose:</strong> Allows doors to dynamically block or allow pathfinding routes. Only relevant if <code>Link Rooms</code> is checked.</li>
-</ul>
-</li>
-<li>
-<p><strong><code>Auto-Generate Surfaces</code>:</strong></p>
-<ul>
-<li><strong>Visible Only:</strong> This setting only appears when <code>Runtime Bake Mode</code> is set to <code>Full Dungeon Bake</code>.</li>
-<li><strong>Functionality:</strong><ul>
-<li>If checked, the adapter automatically creates a default <code>NavMeshSurface</code> configuration for each Agent Type defined in your project settings during the full dungeon bake.</li>
-<li>If unchecked, you must manually provide a list of pre-configured <code>NavMeshSurface</code> components (e.g., on the same GameObject as the adapter) that will be used for the full dungeon bake. This gives you more control over the baking settings (voxel size, agent radius, etc.).</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<hr />
-<h2 id="handling-doors">Handling Doors</h2>
-<p>As mentioned in the settings:</p>
-<ol>
-<li>Ensure <code>Link Rooms</code> is checked (unless using <code>Full Dungeon Bake</code>).</li>
-<li>Ensure <code>Disable When Door is Clos</code> is checked.</li>
-<li>Your door prefabs (used as Connectors/Blockers or via Lock &amp; Key) <strong>must</strong> have a script attached that includes a <code>Door</code> component and correctly sets its <code>IsOpen</code> property to <code>true</code> when the door is open and <code>false</code> when it's closed.</li>
-</ol>
-<p>DunGen will then automatically toggle the associated <code>NavMeshLink</code> component based on the door's state.</p>
-<hr />
-<h2 id="2d-navmesh-integration">2D NavMesh Integration</h2>
-<p>DunGen also provides limited support for 2D NavMesh generation using Unity's NavMesh Components.</p>
-<div class="admonition check">
-<p class="admonition-title">Use the Correct Adapter</p>
-<p>For 2D projects, you must use the <strong><code>Unity NavMesh Adapter (2D)</code></strong> component <em>instead</em> of the standard <code>Unity Nav Mesh Adapter</code>.</p>
-</div>
-<p>The 2D adapter works similarly but specifically looks for the following components within your Tile prefabs to generate the NavMesh shape:</p>
-<ul>
-<li><strong><code>SpriteRenderer</code>:</strong> Considers the sprite's mesh data. Uses the layers defined in the adapter's "Included Layers" setting to determine walkability (sprites on other layers are considered non-walkable).</li>
-<li><strong><code>Tilemap</code>:</strong> Considers tiles based on their <code>Collider Type</code>:<ul>
-<li><code>None</code>: Considered walkable.</li>
-<li><code>Sprite</code> or <code>Grid</code>: Considered non-walkable obstacles.</li>
-<li>The shape is derived from the <em>tile's mesh</em>, not its collider shape.</li>
-</ul>
-</li>
-</ul>
-<p>Other settings on the 2D adapter generally mirror the standard adapter where applicable.</p>
-<hr />
-<p>By using the appropriate Unity NavMesh Adapter, you can seamlessly integrate robust pathfinding into your DunGen-generated levels. Choose the <code>Runtime Bake Mode</code> and configure linking options carefully based on your project's needs and performance targets.</p>
+<h2 id="option-2-custom-generation-pipeline">Option 2: Custom Generation Pipeline</h2>
+<p>Another way to adjust candidate tiles is to create and assign a new <a href="../generation-pipeline/">Generation Pipeline</a>. Once created, you can make a custom class that implements <code>ICandidateTileBuilder</code> (or inherits from <code>CandidateTileBuilder</code> if you want to keep most of the default implementation).</p>
+<p>This new class will then appear in the dropdown for the "Candidate Tile Builder" field in the inspector for your new generation pipeline asset.</p>
 
 
 
@@ -1968,7 +1837,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Overview">
+          <a href="../connection-rules/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Tile Connection Rules">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1978,20 +1847,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Overview
+                Tile Connection Rules
               </div>
             </div>
           </a>
         
         
           
-          <a href="../astar-pathfinding/" class="md-footer__link md-footer__link--next" aria-label="Next: A* Pathfinding Project Pro">
+          <a href="../attached-dungeons/" class="md-footer__link md-footer__link--next" aria-label="Next: Generating Attached Dungeons">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                A* Pathfinding Project Pro
+                Generating Attached Dungeons
               </div>
             </div>
             <div class="md-footer__button md-icon">
