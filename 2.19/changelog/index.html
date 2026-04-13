@@ -83,7 +83,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#2190-unreleased" class="md-skip">
+        <a href="#2190-20260413" class="md-skip">
           Skip to content
         </a>
       
@@ -293,13 +293,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#2190-unreleased" class="md-nav__link">
+  <a href="#2190-20260413" class="md-nav__link">
     <span class="md-ellipsis">
-      2.19.0 - [Unreleased]
+      2.19.0 - [2026/04/13]
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="2.19.0 - [Unreleased]">
+    <nav class="md-nav" aria-label="2.19.0 - [2026/04/13]">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -3816,13 +3816,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#2190-unreleased" class="md-nav__link">
+  <a href="#2190-20260413" class="md-nav__link">
     <span class="md-ellipsis">
-      2.19.0 - [Unreleased]
+      2.19.0 - [2026/04/13]
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="2.19.0 - [Unreleased]">
+    <nav class="md-nav" aria-label="2.19.0 - [2026/04/13]">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -5957,7 +5957,7 @@
 
   <h1>Changelog</h1>
 
-<h2 id="2190-unreleased">2.19.0 - [Unreleased]</h2>
+<h2 id="2190-20260413">2.19.0 - [2026/04/13]</h2>
 <h3 id="added">Added</h3>
 <ul>
 <li>Added a new culling camera component (DunGen &gt; Culling &gt; Culling Camera) to manage various types of culling<ul>
@@ -6041,6 +6041,13 @@
 <li>Fixed various transform issues where the dungeon would not correctly respect the position/rotation of its root or attachment point</li>
 <li>Attached dungeons will now automatically avoid collisions with the tile they are attached to</li>
 <li>Fixed an issue causing an incorrect number of global props to be spawned</li>
+<li>Various Dungeon Crawler Sample fixes:<ul>
+<li>Fixed a warning from the minimap camera in newer versions of Unity</li>
+<li>The minimap now works with scriptable render pipelines as well as the built-in render pipeline</li>
+<li>Static fields in the <code>HideableObject</code> component are now properly reset when domain reload is disabled in the project settings</li>
+</ul>
+</li>
+<li><code>Doorway.LockID</code> and <code>Dungeon.Branches</code> are now properly serialized</li>
 </ul>
 <h3 id="removed">Removed</h3>
 <ul>
