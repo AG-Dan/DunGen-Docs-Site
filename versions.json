@@ -3,14 +3,13 @@
     "version": "2.19",
     "title": "2.19",
     "aliases": [
-      "beta"
+      "beta",
+      "latest"
     ]
   },
   {
     "version": "2.18",
     "title": "2.18",
-    "aliases": [
-      "latest"
-    ]
+    "aliases": []
   }
 ]
