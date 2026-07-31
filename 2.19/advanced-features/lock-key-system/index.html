@@ -1282,7 +1282,7 @@
   
   
   <span class="md-ellipsis">
-    Culling
+    Built-in Culling
     
   </span>
   
@@ -2006,17 +2006,13 @@
 <h3 id="ikeyspawner-interface"><code>IKeySpawner</code> Interface</h3>
 <ul>
 <li><strong>Purpose:</strong> Implement this interface on a component to tell DunGen <em>how</em> and <em>where</em> a key object should actually appear in the game.</li>
-<li><strong>Methods:</strong><ol>
-<li><code>bool CanSpawnKey(KeyManager keyManager, Key key);</code></li>
-<li><code>void SpawnKey(KeySpawnParameters keySpawnParameters);</code></li>
-</ol>
-</li>
+<li><strong>Method:</strong> <code>void SpawnKey(KeySpawnParameters keySpawnParameters);</code></li>
 <li><strong>Workflow:</strong><ol>
 <li>When DunGen decides a specific <code>Key</code> needs to be placed at a location defined in the Dungeon Flow (Node or Line Segment).</li>
 <li>It searches for GameObjects at valid positions within the target Tile(s).</li>
 <li>It finds components on those GameObjects that implement <code>IKeySpawner</code>.</li>
 <li>It randomly selects one of these components.</li>
-<li>It calls the <code>CanSpawnKey</code> method to determine if a key can be spawned here, and if so, it calls the <code>SpawnKey</code> method on the selected component, passing information about the specific <code>Key</code> type.</li>
+<li>It calls the <code>SpawnKey</code> method on the selected component, passing information about the specific <code>Key</code> type.</li>
 </ol>
 </li>
 <li>
@@ -2105,10 +2101,10 @@
 </span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">    </span><span class="p">{</span>
 </span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">TargetRenderer</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="k">null</span><span class="p">)</span>
 </span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">        </span><span class="p">{</span>
-</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">propertyBlock</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">null</span><span class="p">)</span>
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">            </span><span class="k">if</span><span class="p">(</span><span class="n">propertyBlock</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">null</span><span class="p">)</span>
 </span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="w">                </span><span class="n">propertyBlock</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">MaterialPropertyBlock</span><span class="p">();</span>
 </span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>
-</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="w">            </span><span class="c1">// Use the colour defined in the Key Manager</span>
+</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="w">            </span><span class="c1">// Use the color defined in the Key Manager</span>
 </span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="w">            </span><span class="n">propertyBlock</span><span class="p">.</span><span class="n">SetColor</span><span class="p">(</span><span class="s">&quot;_Color&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">key</span><span class="p">.</span><span class="n">Colour</span><span class="p">);</span>
 </span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="w">            </span><span class="n">TargetRenderer</span><span class="p">.</span><span class="n">SetPropertyBlock</span><span class="p">(</span><span class="n">propertyBlock</span><span class="p">);</span>
 </span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a><span class="w">        </span><span class="p">}</span>
